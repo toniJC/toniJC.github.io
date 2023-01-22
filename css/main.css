@@ -98,7 +98,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 a {
-  color: #2ad482;
+  color: #005377;
   text-decoration: none;
   outline: none;
   -webkit-transition: all 0.3s ease-in-out;
@@ -232,7 +232,7 @@ textarea.form-control, textarea.form-control:focus {
   left: 50%;
   right: 50%;
   bottom: 0;
-  background: #2ad482;
+  background: #005377;
   height: 2px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -299,7 +299,7 @@ textarea.form-control, textarea.form-control:focus {
 }
 
 .form-group-with-icon.form-group-focus i {
-  color: #2ad482;
+  color: #005377;
 }
 
 .form-group.form-group-w-checkbox {
@@ -374,7 +374,7 @@ input[type="submit"] {
   line-height: 1.2;
   border: 0;
   outline: 0;
-  border: 2px solid #2ad482;
+  border: 2px solid #005377;
   color: #222;
   text-shadow: none;
   background-color: #fff;
@@ -395,8 +395,8 @@ input[type="button"]:hover,
 input[type="button"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  background-color: #2ad482;
-  border-color: #2ad482;
+  background-color: #005377;
+  border-color: #005377;
   color: #fff;
 }
 
@@ -414,11 +414,11 @@ input[type="submit"]:focus {
 /* / buttons */
 
 .border-top {
-  border-top: 2px solid #2ad482;
+  border-top: 2px solid #005377;
 }
 
 .border-bottom {
-  border-bottom: 2px solid #2ad482;
+  border-bottom: 2px solid #005377;
 }
 
 /* Footer */
@@ -560,7 +560,7 @@ blockquote {
   width: 52px;
   height: 52px;
   margin: 100px auto;
-  background-color: #2ad482;
+  background-color: #005377;
 
   border-radius: 100%;  
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
@@ -789,7 +789,7 @@ blockquote {
   top: 0;
   bottom: 0;
   padding: 10px 0 0;
-  background-color: #fff;
+  background-color: rgba(0, 83, 119,255);
   overflow: auto;
   z-index: 11;
 }
@@ -843,7 +843,7 @@ blockquote {
 }
 
 .site-title span {
-  color: #2ad482;
+  color: #005377;
 }
 
 .header.sticked .site-title {
@@ -911,14 +911,14 @@ blockquote {
   width: 2px;
   height: 100%;
   margin: 0 auto;
-  background-color: #eee;
+  background-color: rgb(92, 14, 14);
   -webkit-transition: all 0.18s ease-out;
   -moz-transition: all 0.18s ease-out;
   transition: all 0.18s ease-out;
 }
 
 .site-main-menu li.active a:after {
-  background-color: #2ad482;
+  background-color: #005377;
 }
 /* /Main menu */
 
@@ -944,7 +944,7 @@ blockquote {
 }
 
 .header .social-links a:hover {
-  background-color: #2ad482;
+  background-color: #005377;
 }
 
 .header .social-links a i {
@@ -1041,7 +1041,7 @@ blockquote {
   width: 100%;
   height: 2px;
   margin-top: -1px;
-  background-color: #2ad482;
+  background-color: #005377;
 }
 
 
@@ -1227,8 +1227,8 @@ blockquote {
 .clients.owl-carousel .owl-nav .owl-prev:hover,
 .clients.owl-carousel .owl-nav .owl-next:hover {
   color: #fff;
-  background-color: #2ad482;
-  border-color: #2ad482;
+  background-color: #005377;
+  border-color: #005377;
 }
 
 
@@ -1284,7 +1284,7 @@ blockquote {
   height: 11px;
   margin-left: -5px;
   border-radius: 5px;
-  border: 2px solid #2ad482;
+  border: 2px solid #005377;
   background-color: #fff;
 }
 
@@ -1344,7 +1344,7 @@ blockquote {
 .skills-second-style .skill-container {
   position: relative;
   background-color: transparent;
-  border: 1px solid #2ad482;
+  border: 1px solid #005377;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
@@ -1357,7 +1357,7 @@ blockquote {
 }
 
 .skills-second-style .skill-percentage {
-  background-color: #2ad482;
+  background-color: #005377;
   border: 2px solid #fff;
   -moz-border-radius: 9px;
   -webkit-border-radius: 9px;
@@ -1461,7 +1461,7 @@ blockquote {
 .portfolio-filters li.active a,
 .portfolio-filters li.active a:hover {
   background-color: #fff;
-  border: 2px solid #2ad482;
+  border: 2px solid #005377;
   color: #222;
 }
 
@@ -1582,7 +1582,7 @@ blockquote {
   width: 30px;
   height: 30px;
   background-color: #fff;
-  color: #2ad482;
+  color: #005377;
   text-align: center;
   line-height: 30px;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1926,8 +1926,8 @@ blockquote {
 .testimonials.owl-carousel .owl-nav .owl-next:hover,
 .clients.owl-carousel .owl-nav .owl-prev:hover,
 .clients.owl-carousel .owl-nav .owl-next:hover {
-  background-color: #2ad482;
-  border-color: #2ad482;
+  background-color: #005377;
+  border-color: #005377;
   color: #fff;
 }
 
@@ -2111,7 +2111,7 @@ blockquote {
 }
 
 .ajax-page-nav > div.nav-item a:hover {
-  background-color: #2ad482;
+  background-color: #005377;
   color: #fff;
 }
 
@@ -2170,7 +2170,7 @@ blockquote {
 }
 
 .project-general-info .fa {
-  color: #2ad482;
+  color: #005377;
   margin-right: 5px;
 }
 
@@ -2202,8 +2202,8 @@ blockquote {
 
 .share-buttons a:hover {
   color: #fff;
-  background-color: #2ad482;
-  border-color: #2ad482;
+  background-color: #005377;
+  border-color: #005377;
 }
 
 .share-buttons a:last-child {
@@ -2436,7 +2436,7 @@ blockquote {
 }
 
 .post-comments .media-footer a:hover {
-  color: #2ad482;
+  color: #005377;
 }
 
 .blog-post-content .divider {
@@ -2510,7 +2510,7 @@ blockquote p {
 }
 
 .entry-meta a:hover {
-  color: #2ad482;
+  color: #005377;
 }
 
 .entry-meta.entry-meta-top > span:after {
@@ -2551,7 +2551,7 @@ blockquote p {
   font-size: 14px;
   margin: 0 6px 6px 0;
   color: #fff;
-  background-color: #2ad482;
+  background-color: #005377;
   padding: 2px 5px;
 }
 
@@ -2561,7 +2561,7 @@ blockquote p {
 
 .cat-links li a:hover {
   color: #fff;
-  background-color: #2ad482;
+  background-color: #005377;
 }
 
 .byline {
@@ -2659,7 +2659,7 @@ blockquote p {
 
 .post-navigation a:hover,
 .image-navigation a:hover {
-  color: #2ad482;
+  color: #005377;
 }
 
 /* Posts Navigation & Comments */
@@ -3379,7 +3379,7 @@ blockquote p {
   font-weight: 400;
   display: block;
   margin: 10px 0;
-  color: #2ad482;
+  color: #005377;
 }
 
 .lmpixels-arrows-nav {
@@ -3412,7 +3412,7 @@ blockquote p {
 }
 
 .lmpixels-arrows-nav > div:hover {
-  color: #2ad482;
+  color: #005377;
 }
 
 .info-list {
@@ -3438,7 +3438,7 @@ blockquote p {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #2ad482;
+  background-color: #005377;
 }
 
 @media only screen and (max-width: 991px) {
