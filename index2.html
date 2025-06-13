@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Antonio Junquera Criado - Ingeniero Informático</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="CV online de Antonio Junquera Criado, Ingeniero Informático y FullStack Developer." />
+  <meta name="keywords" content="CV, Antonio Junquera, Ingeniero Informático, FullStack Developer, Resume, Portfolio" />
+  <meta name="author" content="Antonio Junquera" />
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta property="og:title" content="Antonio Junquera Criado - Ingeniero Informático" />
+  <meta property="og:description" content="CV online de Antonio Junquera Criado, Ingeniero Informático y FullStack Developer." />
+  <meta property="og:image" content="images/pequenia.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tuweb.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Open+Sans:400,600&display=swap">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="css/animate.css" type="text/css">
+  <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+  <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/linearicons@1.0.0/dist/web-font/style.css">
+  <style>
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background: #f9fbfd;
+      color: #222;
+      margin: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #2074e7 0%, #1de9b6 100%);
+      color: #fff;
+      padding: 40px 0 30px 0;
+      box-shadow: 0 3px 20px #00000015;
+    }
+    .header-content {
+      max-width: 1024px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .my-photo img {
+      border-radius: 16px; /* Cuadrada, pero esquinas suavizadas */
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 2px 16px #1112;
+      background: #fff;
+      display: block;
+    }
+    .site-title-block {
+      flex: 1;
+      min-width: 200px;
+    }
+    .site-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 2.3rem;
+      margin: 0;
+    }
+    .site-subtitle {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-top: 4px;
+      opacity: 0.95;
+    }
+    .site-nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      font-weight: 600;
+    }
+    .site-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .site-nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #1de9b6;
+      transition: width 0.3s;
+      margin: 0 auto;
+    }
+    .site-nav a:hover::after, .site-nav a.active::after {
+      width: 80%;
+    }
+    .social-links a {
+      color: #fff;
+      margin-right: 16px;
+      font-size: 1.5rem;
+      opacity: 0.9;
+      transition: color 0.2s;
+    }
+    .social-links a:hover { color: #1de9b6; }
+    .copyrights {
+      font-size: 0.95em;
+      opacity: 0.85;
+      text-align: center;
+      margin-top: 12px;
+    }
+    @media (max-width: 800px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 0 18px;
+      }
+      .site-nav ul { flex-direction: column; gap: 10px; }
+      .my-photo img { width: 120px; height: 120px; }
+    }
+    main {
+      max-width: 1050px;
+      margin: 35px auto 0 auto;
+      padding: 0 18px 60px 18px;
+      background: #fff;
+      box-shadow: 0 3px 32px #0001;
+      border-radius: 18px;
+      min-height: 60vh;
+      animation: fadein 0.8s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(32px);}
+      to { opacity: 1; transform: none;}
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin-top: 0;
+    }
+
+    /* "Sobre mí" con foto a la izquierda */
+    .about-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 36px;
+      margin-top: 12px;
+      margin-bottom: 22px;
+    }
+    .about-secondary-photo {
+      min-width: 140px;
+      width: 400px;
+      height: 440px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 3px 14px #1112;
+      border: 3px solid #eaf3f9;
+      background: #fff;
+    }
+    .about-description {
+      flex: 1;
+    }
+    @media (max-width: 700px) {
+      .about-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+      }
+      .about-secondary-photo {
+        width: 90vw;
+        max-width: 320px;
+        height: 190px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    /* Restante igual que antes... */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin: 24px 0;
+    }
+    .skills-group {
+      flex: 1 1 300px;
+      min-width: 230px;
+    }
+    .skill-bar { margin-bottom: 18px; }
+    .skill-label {
+      display: flex; justify-content: space-between; margin-bottom: 2px;
+      font-size: 1em;
+      font-weight: 500;
+    }
+    .skill-bar-bg {
+      background: #eef3fa;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 16px;
+      position: relative;
+    }
+    .skill-bar-fill {
+      background: linear-gradient(90deg, #2074e7, #1de9b6 90%);
+      height: 100%;
+      width: 0;
+      transition: width 2s cubic-bezier(.4,0,.2,1);
+    }
+    .skills-list.visible .skill-bar-fill {
+      width: var(--width);
+    }
+    .timeline {
+      border-left: 4px solid #2074e7;
+      margin-left: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .timeline-item {
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: -32px;
+      top: 6px;
+      width: 16px; height: 16px;
+      background: #fff;
+      border: 3px solid #1de9b6;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px #1de9b660;
+    }
+    .timeline-period { font-weight: bold; color: #2074e7; font-size: 1.08em; }
+    .timeline-company { font-size: 1em; color: #1de9b6; }
+    .timeline-title { font-size: 1.07em; margin: 0 0 2px 0; }
+    .timeline-desc { margin: 0 0 0.5em 0; font-size: 0.97em; color: #222b; }
+    @media (max-width: 700px) {
+      .timeline { padding-left: 8px; }
+      .timeline-item:before { left: -20px;}
+    }
+    .lang-list, .other-list {
+      padding-left: 0;
+      list-style: none;
+      margin: 12px 0;
+    }
+    .lang-list li, .other-list li {
+      padding: 5px 0;
+      font-size: 1.04em;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .lang-level {
+      background: #2074e7;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.97em;
+      padding: 2px 10px;
+      margin-left: 6px;
+    }
+    .card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 32px;
+  margin: 18px 0 8px 0;
+}
+.card-list.alt { margin-bottom: 22px; }
+
+.card-list-item {
+  background: #f3faff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #1de9b60c;
+  padding: 14px 20px 14px 16px;
+  font-size: 1.06em;
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+  flex: 1 1 350px;
+  transition: box-shadow 0.18s, background 0.18s;
+  border: 1.5px solid #eaf3f9;
+  position: relative;
+  cursor: default;
+}
+.card-list-item .icon {
+  margin-right: 13px;
+  font-size: 1.24em;
+  color: #2074e7cc;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.card-list-item:hover {
+  box-shadow: 0 4px 18px #2074e72a;
+  background: #e7f8f9;
+  border-color: #1de9b6;
+}
+.card-list-item:hover .icon {
+  color: #1de9b6;
+}
+@media (max-width: 700px) {
+  .card-list { flex-direction: column; gap: 10px; }
+  .card-list-item { min-width: unset; font-size: 1em;}
+}
+    /* Botón CV flotante móvil (si lo activas) */
+    @media (max-width: 700px) {
+      .btn-cv {
+        position: fixed;
+        bottom: 14px; right: 16px; z-index: 20;
+        box-shadow: 0 3px 12px #2074e799;
+        border: 2px solid #1de9b6;
+        font-size: 1.04em;
+      }
+    }
+    /* Footer */
+    footer {
+      background: #f3faff;
+      color: #2074e7;
+      font-size: 1em;
+      padding: 20px 0 16px 0;
+      text-align: center;
+      border-top: 1px solid #e6f2fc;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Cabecera principal -->
+  <header role="banner" aria-label="Cabecera principal">
+    <div class="header-content">
+      <!--<div class="my-photo">
+        <img src="images/pequenia.jpeg" alt="Foto profesional de Antonio Junquera">
+      </div>-->
+      <div class="site-title-block">
+        <h1 class="site-title">Antonio Junquera Criado</h1>
+        <div class="site-subtitle">Ingeniero Informático &amp; FullStack Developer</div>
+      </div>
+      <nav class="site-nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="#sobre-mi" class="active">Sobre mí</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;align-items:center;">
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/antonio-junquera-criado-41988910a/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <!-- Si quieres añadir de nuevo el botón CV, descomenta esta línea:
+        <a href="CV_AJC.pdf" target="_blank" class="btn-cv" aria-label="Descargar CV">Descargar CV</a>
+        -->
+      </div>
+    </div>
+    
+  </header>
+
+  <main>
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <div class="about-wrapper">
+        <img class="about-secondary-photo" src="images/principal.jpeg" alt="Foto adicional de Antonio Junquera">
+        <div class="about-description">
+          <p>
+            Me considero una persona apasionada de la tecnología, proactivo a la hora de aprender nuevas tecnologías y emprender nuevas metas.<br>
+            Siempre estoy investigando nuevas herramientas y frameworks para poder desarrollar posibles soluciones a problemas diarios.
+          </p>
+          <p>
+            Creo que tengo la capacidad de entender los problemas, analizarlos y subdividirlos con el fin de encontrar una posible solución.<br>
+            Me gustan los retos y las metas desconocidas, porque me obligan a evolucionar y descubrir nuevas capacidades.
+          </p>
+          <p>
+            Aficionado a la inteligencia artificial y apasionado de las metodologías ágiles.
+          </p>
+          <blockquote style="margin-top:24px; color:#1de9b6; font-style: italic;">
+            "Hacer la mitad de algo es esencialmente, no hacer nada" - Jeff Sutherland
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPACIDADES -->
+    <section>
+      <h2>Capacidades</h2>
+      <div class="skills-list" id="skills-list">
+        <div class="skills-group">
+          <div class="skill-bar">
+            <div class="skill-label"><span><i class="fas fa-code"></i> Diseño y Desarrollo</span> <span>Experto</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="--width: 90%;"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-label"><span><i class="fas fa-laptop-code"></i> Análisis y Estimación</span> <span>Avanzado</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="--width: 85%;"></div></div>
+          </div>
+        </div>
+        <div class="skills-group">
+          <div class="skill-bar">
+            <div class="skill-label"><span><i class="fas fa-drafting-compass"></i> Gestión de Proyectos</span> <span>Avanzado</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="--width: 80%;"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-label"><span><i class="fas fa-flag"></i> Agilidad</span> <span>Avanzado</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="--width: 85%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES Y TECNOLOGÍAS -->
+    <section>
+      <h2>Habilidades y Tecnologías</h2>
+      <div class="skills-list" id="skills-tech">
+        <div class="skills-group">
+          <h4>Lenguajes de Programación</h4>
+          <div class="skill-bar"><div class="skill-label"><span>C#</span><span>85%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:85%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Java</span><span>75%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:75%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>C++</span><span>70%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:70%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>JavaScript</span><span>65%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:65%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>jQuery</span><span>80%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:80%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Matlab</span><span>40%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:40%;"></div></div></div>
+        </div>
+        <div class="skills-group">
+          <h4>Frameworks</h4>
+          <div class="skill-bar"><div class="skill-label"><span>.Net Core</span><span>85%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:85%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>.Net MVC5</span><span>80%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:80%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Entity Framework</span><span>80%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:80%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Hibernate</span><span>60%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:60%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Struts 2</span><span>60%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:60%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Laravel</span><span>65%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:65%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Swagger</span><span>70%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:70%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Bootstrap</span><span>90%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:90%;"></div></div></div>
+        </div>
+        <div class="skills-group">
+          <h4>Acceso a Datos &amp; Cloud</h4>
+          <div class="skill-bar"><div class="skill-label"><span>SQL</span><span>80%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:80%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>MongoDb</span><span>75%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:75%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>CosmosDb</span><span>75%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:75%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Snowflake</span><span>50%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:50%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>DataLake</span><span>60%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:60%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Azure Functions</span><span>80%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:80%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Azure Pipelines</span><span>85%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:85%;"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Azure DevOps</span><span>90%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="--width:90%;"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IDIOMAS -->
+    <section>
+      <h2>Idiomas</h2>
+      <ul class="lang-list">
+        <li>Español <span class="lang-level">Nativo</span></li>
+        <li>Inglés <span class="lang-level">Intermedio (B2)</span></li>
+      </ul>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section id="experiencia">
+      <h2>Experiencia Profesional &amp; Formación</h2>
+      <h3 style="margin-bottom:8px;">Formación Acreditada</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">2022</div>
+          <div class="timeline-company">Certificación</div>
+          <div class="timeline-title">Workato Automation PRO I, II, III</div>
+          <div class="timeline-desc">Tres certificaciones oficiales sobre Workato Automation.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2020</div>
+          <div class="timeline-company">IMF Business School</div>
+          <div class="timeline-title">Máster en gestión y dirección de proyectos</div>
+          <div class="timeline-desc">Preparación para PMP y técnicas avanzadas de gestión de proyectos.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2019</div>
+          <div class="timeline-company">devAcademy</div>
+          <div class="timeline-title">Curso arquitectura microservicios</div>
+          <div class="timeline-desc">Diseño de sistemas basados en microservicios, CI/CD, Docker, AWS, Node.js, etc.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2018</div>
+          <div class="timeline-company">europeanScrum.org</div>
+          <div class="timeline-title">Scrum Master</div>
+          <div class="timeline-desc">Certificación oficial como Scrum Master.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2018</div>
+          <div class="timeline-company">JavierGarzas.es</div>
+          <div class="timeline-title">Product Owner</div>
+          <div class="timeline-desc">Formación avanzada en Product Ownership.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2012-2017</div>
+          <div class="timeline-company">Universidad Francisco de Vitoria</div>
+          <div class="timeline-title">Grado en ingeniería informática</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2012-2016</div>
+          <div class="timeline-company">Universidad Francisco de Vitoria</div>
+          <div class="timeline-title">Título de Experto en robótica</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2016</div>
+          <div class="timeline-company">Universidad Francisco de Vitoria</div>
+          <div class="timeline-title">Curso de informática forense</div>
+          <div class="timeline-desc">Curso de 20h sobre técnicas de análisis forense.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2012</div>
+          <div class="timeline-company">Pixelpro.es</div>
+          <div class="timeline-title">Desarrollo de aplicaciones Android</div>
+          <div class="timeline-desc">Curso de 40h en desarrollo de apps Android.</div>
+        </div>
+      </div>
+
+      <!-- FORMACIÓN NO ACREDITADA -->
+<h3 style="margin-top:36px; margin-bottom:8px;">Formación No Acreditada</h3>
+<div class="card-list">
+  <div class="card-list-item">
+    <span class="icon"><i class="fas fa-tools"></i></span>
+    Reparación de sistemas informáticos
+  </div>
+  <div class="card-list-item">
+    <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+    Profesor particular en Universidad Francisco de Vitoria, Madrid
+  </div>
+  <div class="card-list-item">
+    <span class="icon"><i class="fab fa-apple"></i></span>
+    Desarrollo de aplicaciones para iOS con Swift 3 (Udemy)
+  </div>
+  <div class="card-list-item">
+    <span class="icon"><i class="fab fa-angular"></i></span>
+    Desarrollo en Angular2 y Node.js (Udemy)
+  </div>
+  <div class="card-list-item">
+    <span class="icon"><i class="fab fa-microsoft"></i></span>
+    Desarrollo ASP.Net MVC (Udemy)
+  </div>
+  <div class="card-list-item">
+    <span class="icon"><i class="fas fa-user-secret"></i></span>
+    Hacking ético (Udemy)
+  </div>
+  <div class="card-list-item">
+    <span class="icon"><i class="fas fa-people-group"></i></span>
+    Animador y organizador de eventos
+  </div>
+</div>
+
+      <h3 style="margin-top:36px; margin-bottom:8px;">Experiencia Profesional</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">2024 - Actualidad</div>
+          <div class="timeline-company">BIP X-Tech</div>
+          <div class="timeline-title">XTech Expert</div>
+          <div class="timeline-desc">Consultoría Cloud en todos los ámbitos de negocio y tecnologías.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2023 - 2024</div>
+          <div class="timeline-company">Sportian by Globant &amp; La Liga Tech</div>
+          <div class="timeline-title">Technical Lead</div>
+          <div class="timeline-desc">Gestión técnica de equipos, soluciones y proyectos.<br><b>*Más info en CV descargable.</b></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2023</div>
+          <div class="timeline-company">Avanade Spain</div>
+          <div class="timeline-title">Consultor Senior</div>
+          <div class="timeline-desc">Gestión técnica y arquitectónica de proyectos.<br><b>*Más info en CV descargable.</b></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2021 - 2022</div>
+          <div class="timeline-company">Kabel Sistemas de Información</div>
+          <div class="timeline-title">Consultor Senior de datos e integración</div>
+          <div class="timeline-desc">Definición y desarrollo de arquitecturas Cloud y gestión técnica de proyectos.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2020 - 2021</div>
+          <div class="timeline-company">Viseo Spain</div>
+          <div class="timeline-title">Senior Teamlead</div>
+          <div class="timeline-desc">Responsabilidades técnicas, arquitectura y control de servicios cloud.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2019 - 2020</div>
+          <div class="timeline-company">Viseo Spain</div>
+          <div class="timeline-title">Teamlead y consultor</div>
+          <div class="timeline-desc">Gestión y coordinación de equipos de desarrollo y proyectos.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2017 - 2019</div>
+          <div class="timeline-company">The Birchman Group</div>
+          <div class="timeline-title">Consultor Junior</div>
+          <div class="timeline-desc">Desarrollo, análisis y soporte en proyectos tecnológicos.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2015 - 2017</div>
+          <div class="timeline-company">Independiente</div>
+          <div class="timeline-title">Desarrollador de páginas web a medida</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2015 - 2016</div>
+          <div class="timeline-company">Efika Market</div>
+          <div class="timeline-title">Becario desarrollador</div>
+        </div>
+      </div>
+
+     <!-- OTROS DATOS -->
+<h3 style="margin-top:36px; margin-bottom:8px;">Otros datos</h3>
+<div class="card-list alt">
+  <div class="card-list-item">
+    <span class="icon"><i class="fas fa-car"></i></span>
+    Carnet de conducir y vehículo propio
+  </div>
+  <div class="card-list-item">
+    <span class="icon"><i class="fas fa-plane-departure"></i></span>
+    Disponibilidad para viajar
+  </div>
+  <div class="card-list-item">
+    <span class="icon"><i class="fas fa-hands-helping"></i></span>
+    Voluntario en la fundación Hontanar de ayuda a la drogadicción (8 meses)
+  </div>
+  <div class="card-list-item">
+    <span class="icon"><i class="fas fa-person-walking"></i></span>
+    Practicante de artes marciales desde los 6 años
+  </div>
+</div>
+    </section>
+    <div class="copyrights">© 2025 Antonio Junquera Criado. Todos los derechos reservados.</div>
+  </main>
+
+  <script>
+    function animateSkills() {
+      document.querySelectorAll('.skills-list').forEach(function(group) {
+        if (!group.classList.contains('visible')) {
+          var rect = group.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 80) {
+            group.classList.add('visible');
+          }
+        }
+      });
+    }
+    window.addEventListener('scroll', animateSkills);
+    window.addEventListener('DOMContentLoaded', animateSkills);
+  </script>
+</body>
+</html>
