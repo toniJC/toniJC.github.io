@@ -1,280 +1,334 @@
-/*
-* Template Name: Kerge - Resume / CV / vCard Template
-* Author: lmpixels
-* Author URL: http://themeforest.net/user/lmpixels
-* Version: 2.1
-*/
+/**
+ * Decon 86, S.A. — main.js
+ * Vanilla JS — sin dependencias externas.
+ * 5 módulos: Navbar, MobileMenu, ProjectFilter, ContactForm, BackToTop
+ */
 
-(function($) {
-"use strict";
-    // Portfolio subpage filters
-    function portfolio_init() {
-        var portfolio_grid = $('.portfolio-grid'),
-            portfolio_filter = $('.portfolio-filters');
-            
-        if (portfolio_grid) {
+'use strict';
 
-            portfolio_grid.shuffle({
-                speed: 450,
-                itemSelector: 'figure'
-            });
+// Forzar scroll al top en cada carga — se ejecuta después del hash scroll del browser
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('load', function () {
+  history.replaceState(null, '', window.location.pathname);
+  window.scrollTo(0, 0);
+});
 
-            portfolio_filter.on("click", ".filter", function (e) {
-                portfolio_grid.shuffle('update');
-                e.preventDefault();
-                $('.portfolio-filters .filter').parent().removeClass('active');
-                $(this).parent().addClass('active');
-                portfolio_grid.shuffle('shuffle', $(this).attr('data-group') );
-            });
+/* ──────────────────────────────────────────────────────────────
+   1. initNavbar
+   Añade clase `scrolled` al navbar cuando scrollY > 80px.
+   Esa clase activa la sombra sutil via CSS (fondo siempre blanco).
+────────────────────────────────────────────────────────────── */
+function initNavbar() {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
 
-        }
+  function onScroll() {
+    if (window.scrollY > 80) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-    // /Portfolio subpage filters
+  }
 
-    // Contact form validator
-    $(function () {
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // ejecutar al cargar por si ya está scrolleado
+}
 
-        $('#contact_form').validator();
+/* ──────────────────────────────────────────────────────────────
+   2. initMobileMenu
+   Toggle del drawer mobile. Cierra al hacer click en link
+   o al tocar fuera del navbar.
+────────────────────────────────────────────────────────────── */
+function initMobileMenu() {
+  const menuBtn    = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navbar     = document.getElementById('navbar');
+  if (!menuBtn || !mobileMenu) return;
 
-        $('#contact_form').on('submit', function (e) {
-            if (!e.isDefaultPrevented()) {
-                var url = "contact_form/contact_form.php";
+  function openMenu() {
+    mobileMenu.classList.remove('hidden');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    menuBtn.setAttribute('aria-label', 'Cerrar menú');
 
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: $(this).serialize(),
-                    success: function (data)
-                    {
-                        var messageAlert = 'alert-' + data.type;
-                        var messageText = data.message;
+    // Hamburger → × via transform en spans
+    const spans = menuBtn.querySelectorAll('span');
+    if (spans.length >= 3) {
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity   = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    }
+  }
 
-                        var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                        if (messageAlert && messageText) {
-                            $('#contact_form').find('.messages').html(alertBox);
-                            $('#contact_form')[0].reset();
-                        }
-                    }
-                });
-                return false;
-            }
-        });
-    });
-    // /Contact form validator
+  function closeMenu() {
+    mobileMenu.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Abrir menú');
 
-    // Hide Mobile menu
-    function mobileMenuHide() {
-        var windowWidth = $(window).width(),
-            siteHeader = $('#site_header');
+    const spans = menuBtn.querySelectorAll('span');
+    if (spans.length >= 3) {
+      spans[0].style.transform = '';
+      spans[1].style.opacity   = '';
+      spans[2].style.transform = '';
+    }
+  }
 
-        if (windowWidth < 992) {
-            siteHeader.addClass('mobile-menu-hide');
-            setTimeout(function(){
-                siteHeader.addClass('animate');
-            }, 500);
+  menuBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // Cerrar al hacer click en cualquier link del drawer
+  mobileMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Cerrar al tocar fuera del navbar
+  document.addEventListener('click', function (e) {
+    if (navbar && !navbar.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Cerrar con Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      menuBtn.focus();
+    }
+  });
+}
+
+/* ──────────────────────────────────────────────────────────────
+   3. initProjectFilter
+   Filtra .project-card por data-category cuando se hace
+   click en un .filter-btn. "all" muestra todos.
+   Botón activo recibe clase `active` (bg azul primario via CSS).
+────────────────────────────────────────────────────────────── */
+function initProjectFilter() {
+  const filterBtns   = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  if (!filterBtns.length || !projectCards.length) return;
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      // Actualizar botón activo
+      filterBtns.forEach(function (b) {
+        b.classList.remove('active');
+        b.removeAttribute('aria-current');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-current', 'true');
+
+      const filter = btn.getAttribute('data-filter');
+
+      // Mostrar/ocultar cards
+      projectCards.forEach(function (card) {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.classList.remove('hidden');
         } else {
-            siteHeader.removeClass('animate');
+          card.classList.add('hidden');
         }
-    }
-    // /Hide Mobile menu
-
-    //On Window load & Resize
-    $(window)
-        .on('load', function() { //Load
-            // Animation on Page Loading
-            $(".preloader").fadeOut( 800, "linear" );
-
-            // initializing page transition.
-            var ptPage = $('.subpages');
-            if (ptPage[0]) {
-                PageTransitions.init({
-                    menu: 'ul.site-main-menu',
-                });
-            }
-        })
-        .on('resize', function() { //Resize
-             mobileMenuHide();
-        });
-
-
-    // On Document Load
-    $(document).on('ready', function() {
-        // Initialize Portfolio grid
-        var $portfolio_container = $(".portfolio-grid");
-        $portfolio_container.imagesLoaded(function () {
-            portfolio_init(this);
-        });
-
-        // Blog grid init
-        var $container = $(".blog-masonry");
-        $container.imagesLoaded(function(){
-            $container.masonry();
-        });
-
-        // Mobile menu
-        $('.menu-toggle').on("click", function () {
-            $('#site_header').addClass('animate');
-            $('#site_header').toggleClass('mobile-menu-hide');
-        });
-
-        // Mobile menu hide on main menu item click
-        $('.site-main-menu').on("click", "a", function (e) {
-            mobileMenuHide();
-        });
-
-        // Sidebar toggle
-        $('.sidebar-toggle').on("click", function () {
-            $('#blog-sidebar').toggleClass('open');
-        });
-
-        // Testimonials Slider
-        $(".testimonials.owl-carousel").owlCarousel({
-            nav: true, // Show next/prev buttons.
-            items: 3, // The number of items you want to see on the screen.
-            loop: false, // Infinity loop. Duplicate last and first items to get loop illusion.
-            navText: false,
-            margin: 25,
-            responsive : {
-                // breakpoint from 0 up
-                0 : {
-                    items: 1,
-                },
-                // breakpoint from 480 up
-                480 : {
-                    items: 1,
-                },
-                // breakpoint from 768 up
-                768 : {
-                    items: 2,
-                },
-                1200 : {
-                    items: 2,
-                }
-            }
-        });
-
-
-        $(".clients.owl-carousel").imagesLoaded().owlCarousel({
-            nav: true, // Show next/prev buttons.
-            items: 2, // The number of items you want to see on the screen.
-            loop: false, // Infinity loop. Duplicate last and first items to get loop illusion.
-            navText: false,
-            margin: 10,
-            autoHeight: false,
-            responsive : {
-                // breakpoint from 0 up
-                0 : {
-                    items: 2,
-                },
-                // breakpoint from 768 up
-                768 : {
-                    items: 4,
-                },
-                1200 : {
-                    items: 6,
-                }
-            }
-        });
-
-
-        // Text rotation
-        $('.text-rotation').owlCarousel({
-            loop: true,
-            dots: false,
-            nav: false,
-            margin: 0,
-            items: 1,
-            autoplay: true,
-            autoplayHoverPause: false,
-            autoplayTimeout: 3800,
-            animateOut: 'fadeOut',
-            animateIn: 'fadeIn'
-        });
-
-        // Lightbox init
-        $('body').magnificPopup({
-            delegate: 'a.lightbox',
-            type: 'image',
-            removalDelay: 300,
-
-            // Class that is added to popup wrapper and background
-            // make it unique to apply your CSS animations just to this exact popup
-            mainClass: 'mfp-fade',
-            image: {
-                // options for image content type
-                titleSrc: 'title',
-                gallery: {
-                    enabled: true
-                },
-            },
-
-            iframe: {
-                markup: '<div class="mfp-iframe-scaler">'+
-                        '<div class="mfp-close"></div>'+
-                        '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
-                        '<div class="mfp-title mfp-bottom-iframe-title"></div>'+
-                      '</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
-
-                patterns: {
-                    youtube: {
-                      index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
-
-                      id: null, // String that splits URL in a two parts, second part should be %id%
-                      // Or null - full URL will be returned
-                      // Or a function that should return %id%, for example:
-                      // id: function(url) { return 'parsed id'; }
-
-                      src: '%id%?autoplay=1' // URL that will be set as a source for iframe.
-                    },
-                    vimeo: {
-                      index: 'vimeo.com/',
-                      id: '/',
-                      src: '//player.vimeo.com/video/%id%?autoplay=1'
-                    },
-                    gmaps: {
-                      index: '//maps.google.',
-                      src: '%id%&output=embed'
-                    }
-                },
-
-                srcAction: 'iframe_src', // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
-            },
-
-            callbacks: {
-                markupParse: function(template, values, item) {
-                 values.title = item.el.attr('title');
-                }
-            },
-        });
-
-        $('.ajax-page-load-link').magnificPopup({
-            type: 'ajax',
-            removalDelay: 300,
-            mainClass: 'mfp-fade',
-            gallery: {
-                enabled: true
-            },
-        });
-
-        //Form Controls
-        $('.form-control')
-            .val('')
-            .on("focusin", function(){
-                $(this).parent('.form-group').addClass('form-group-focus');
-            })
-            .on("focusout", function(){
-                if($(this).val().length === 0) {
-                    $(this).parent('.form-group').removeClass('form-group-focus');
-                }
-            });
-
-        //Google Maps
-        $("#map").googleMap({
-            zoom: 16 // Google Map ZOOM. You can change this value
-        });
-        $("#map").addMarker({
-            address: "S601 Townsend Street, San Francisco, California, USA", // Your Address. Change it
-        });
+      });
     });
+  });
+}
 
-})(jQuery);
+/* ──────────────────────────────────────────────────────────────
+   4. initContactForm
+   Validación client-side + submit via fetch a Formspree.
+   Muestra mensaje de éxito o error en #form-feedback.
+────────────────────────────────────────────────────────────── */
+function initContactForm() {
+  const form     = document.getElementById('contact-form');
+  const feedback = document.getElementById('form-feedback');
+  if (!form || !feedback) return;
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Limpiar errores previos
+    form.querySelectorAll('input, textarea').forEach(function (input) {
+      input.classList.remove('input-error');
+    });
+    hideFeedback();
+
+    // Validación de campos requeridos
+    const nombre  = form.querySelector('[name="nombre"]');
+    const email   = form.querySelector('[name="email"]');
+    const mensaje = form.querySelector('[name="mensaje"]');
+    let valid = true;
+
+    if (!nombre || nombre.value.trim() === '') {
+      if (nombre) nombre.classList.add('input-error');
+      valid = false;
+    }
+
+    if (!email || !emailRegex.test(email.value.trim())) {
+      if (email) email.classList.add('input-error');
+      valid = false;
+    }
+
+    if (!mensaje || mensaje.value.trim() === '') {
+      if (mensaje) mensaje.classList.add('input-error');
+      valid = false;
+    }
+
+    if (!valid) {
+      showFeedback('Por favor, completá todos los campos requeridos correctamente.', false);
+      return;
+    }
+
+    // Enviar a Formspree
+    const submitBtn = form.querySelector('[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled    = true;
+      submitBtn.textContent = 'Enviando…';
+    }
+
+    fetch(form.action, {
+      method:  'POST',
+      body:    new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          showFeedback('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.', true);
+          form.reset();
+        } else {
+          return response.json().then(function (data) {
+            const msg = (data && data.errors)
+              ? data.errors.map(function (err) { return err.message; }).join(', ')
+              : 'Hubo un error al enviar. Por favor, intentá más tarde.';
+            showFeedback(msg, false);
+          });
+        }
+      })
+      .catch(function () {
+        showFeedback('Error de conexión. Por favor, intentá más tarde.', false);
+      })
+      .finally(function () {
+        if (submitBtn) {
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'Enviar Mensaje';
+        }
+      });
+  });
+
+  function showFeedback(message, success) {
+    feedback.textContent = message;
+    feedback.classList.remove('hidden', 'success', 'error');
+    feedback.classList.add(success ? 'success' : 'error');
+  }
+
+  function hideFeedback() {
+    feedback.classList.add('hidden');
+    feedback.textContent = '';
+    feedback.classList.remove('success', 'error');
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   5. initBackToTop
+   Muestra el botón #back-to-top cuando scrollY > 500px.
+   Click hace scroll suave al top.
+────────────────────────────────────────────────────────────── */
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 500) {
+      btn.classList.remove('hidden');
+    } else {
+      btn.classList.add('hidden');
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ──────────────────────────────────────────────────────────────
+   6. initScrollReveal
+   Usa IntersectionObserver para añadir la clase `revealed` a
+   cualquier elemento con clase `reveal` cuando entra en viewport.
+   Una vez revelado, deja de observarse.
+────────────────────────────────────────────────────────────── */
+function initScrollReveal() {
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    observer.observe(el);
+  });
+}
+
+/* ──────────────────────────────────────────────────────────────
+   7. initCounters
+   Anima los contadores numéricos (.stat-number) de 0 al valor
+   en data-target cuando entran en el viewport (threshold 50%).
+────────────────────────────────────────────────────────────── */
+function initCounters() {
+  const counters = document.querySelectorAll('.stat-number');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        const target   = parseInt(entry.target.dataset.target, 10);
+        const suffix   = entry.target.dataset.suffix !== undefined ? entry.target.dataset.suffix : '+';
+        const duration = 1500;
+        const step     = target / (duration / 16);
+        let current    = 0;
+
+        const timer = setInterval(function () {
+          current += step;
+          if (current >= target) {
+            entry.target.textContent = target + suffix;
+            clearInterval(timer);
+          } else {
+            entry.target.textContent = Math.floor(current);
+          }
+        }, 16);
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(function (el) {
+    observer.observe(el);
+  });
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Bootstrap — DOMContentLoaded
+────────────────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function () {
+  initNavbar();
+  initMobileMenu();
+  initProjectFilter();
+  initContactForm();
+  initBackToTop();
+  initScrollReveal();
+  initCounters();
+
+  // Copyright year dinámico
+  const yearEl = document.getElementById('copyright-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+});
