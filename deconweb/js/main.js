@@ -315,6 +315,46 @@ function initCounters() {
 }
 
 /* ──────────────────────────────────────────────────────────────
+   8. initActiveNav
+   Marca el link del nav con text-[#8B1A1A] según la sección
+   visible en viewport. Usa IntersectionObserver con threshold
+   bajo para capturar la sección dominante al hacer scroll.
+────────────────────────────────────────────────────────────── */
+function initActiveNav() {
+  const navLinks = document.querySelectorAll('nav ul a[href^="#"]');
+  if (!navLinks.length) return;
+
+  const sectionIds = Array.from(navLinks).map(function (link) {
+    return link.getAttribute('href').slice(1);
+  }).filter(Boolean);
+
+  const sections = sectionIds.map(function (id) {
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  if (!sections.length) return;
+
+  function setActive(id) {
+    navLinks.forEach(function (link) {
+      const isActive = link.getAttribute('href') === '#' + id;
+      link.style.color = isActive ? '#8B1A1A' : '';
+    });
+  }
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        setActive(entry.target.id);
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+
+  sections.forEach(function (section) {
+    observer.observe(section);
+  });
+}
+
+/* ──────────────────────────────────────────────────────────────
    Bootstrap — DOMContentLoaded
 ────────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
@@ -325,6 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initBackToTop();
   initScrollReveal();
   initCounters();
+  initActiveNav();
 
   // Copyright year dinámico
   const yearEl = document.getElementById('copyright-year');

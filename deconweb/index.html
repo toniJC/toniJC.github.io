@@ -30,7 +30,7 @@
             sans: ['Inter', 'system-ui', 'sans-serif'],
             display: ['Bebas Neue', 'system-ui', 'sans-serif'],
           },
-          boxShadow: { card: '6px 6px 9px rgba(0,0,0,0.2)' }
+          boxShadow: { card: '0 4px 16px rgba(0,0,0,0.08)' }
         }
       }
     }
@@ -75,7 +75,7 @@
 
       <!-- Hamburger mobile -->
       <button id="menu-btn"
-        class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] focus:outline-none"
+        class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] focus:outline-none"
         aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
         <span class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center"></span>
         <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
@@ -84,7 +84,7 @@
     </div>
 
     <!-- Mobile drawer -->
-    <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 px-6 py-4" style="background-color:#1a1a1a;">
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 px-6 py-4" style="background-color:#1a1a1a;">
       <ul class="flex flex-col gap-4 text-[15px]">
         <li><a href="#inicio" class="block text-white hover:text-red-400 transition-colors duration-200 py-1">Inicio</a>
         </li>
@@ -139,7 +139,7 @@
           de España.
         </p>
         <div class="hero-buttons flex flex-col sm:flex-row gap-4">
-          <a href="#contacto" class="btn-dark text-center">Solicitar presupuesto</a>
+          <a href="#contacto" class="btn-primary text-center">Solicitar presupuesto</a>
           <a href="#nosotros" class="btn-outline-white text-center">Conocer más</a>
         </div>
       </div>
@@ -148,9 +148,9 @@
     <!-- ══════════════════════════════════════════════════════════
          STATS BAR
          ══════════════════════════════════════════════════════════ -->
-    <section class="bg-[#1a1a1a] py-16 overflow-hidden">
+    <section class="bg-[#1a1a1a] py-20 overflow-hidden">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/20">
 
           <div class="reveal px-8 py-6 relative">
             <div
@@ -159,7 +159,7 @@
             <div class="relative z-10">
               <div class="font-display text-5xl md:text-6xl text-[#8B1A1A] stat-number" data-target="40" data-suffix="">
                 0</div>
-              <div class="text-white/50 text-xs uppercase tracking-[0.2em] mt-1">Años activos</div>
+              <div class="text-white/70 text-xs uppercase tracking-[0.2em] mt-1">Años activos</div>
             </div>
           </div>
 
@@ -169,17 +169,17 @@
               500</div>
             <div class="relative z-10">
               <div class="font-display text-5xl md:text-6xl text-[#8B1A1A] stat-number" data-target="500">0</div>
-              <div class="text-white/50 text-xs uppercase tracking-[0.2em] mt-1">Obras completadas</div>
+              <div class="text-white/70 text-xs uppercase tracking-[0.2em] mt-1">Obras completadas</div>
             </div>
           </div>
 
           <div class="reveal reveal-delay-2 px-8 py-6 relative">
             <div
               class="font-display text-[80px] md:text-[100px] leading-none text-white/5 absolute -top-2 -left-2 select-none pointer-events-none">
-              ISO</div>
+              3</div>
             <div class="relative z-10">
-              <div class="font-display text-5xl md:text-6xl text-[#8B1A1A]">ISO</div>
-              <div class="text-white/50 text-xs uppercase tracking-[0.2em] mt-1">9001 · 14001 · 27001</div>
+              <div class="font-display text-5xl md:text-6xl text-[#8B1A1A] stat-number" data-target="3">0</div>
+              <div class="text-white/70 text-xs uppercase tracking-[0.2em] mt-1">Certificaciones ISO</div>
             </div>
           </div>
 
@@ -189,7 +189,7 @@
               1986</div>
             <div class="relative z-10">
               <div class="font-display text-5xl md:text-6xl text-[#8B1A1A]">1986</div>
-              <div class="text-white/50 text-xs uppercase tracking-[0.2em] mt-1">Fundación · Madrid</div>
+              <div class="text-white/70 text-xs uppercase tracking-[0.2em] mt-1">Fundación · Madrid</div>
             </div>
           </div>
 
@@ -242,27 +242,26 @@
         <!-- Bento grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
 
-          <!-- Cell grande — texto principal -->
-          <div class="reveal md:col-span-2 bg-[#2d2d2d] rounded-2xl p-8 flex flex-col justify-end min-h-[160px]">
+          <!-- Cell grande — Equipo técnico -->
+          <div class="reveal md:col-span-2 bg-[#f8f9fa] border border-gray-100 rounded-2xl p-8 flex flex-col justify-end min-h-[200px] shadow-card">
             <div>
-              <h3 class="text-white font-semibold text-xl mb-2">Equipo técnico propio</h3>
-              <p class="text-white/60 text-sm leading-relaxed">Personal propio y cualificado en cada obra.
+              <h3 class="text-brand-dark font-semibold text-xl mb-2">Equipo técnico propio</h3>
+              <p class="text-brand-muted text-sm leading-relaxed">Personal propio y cualificado en cada obra.
                 Responsabilidad directa sobre la ejecución, sin intermediarios.</p>
             </div>
           </div>
 
           <!-- Cell — Trayectoria -->
-          <div class="reveal reveal-delay-1 bg-[#8B1A1A] rounded-2xl p-8 flex flex-col justify-end min-h-[160px]">
+          <div class="reveal reveal-delay-1 bg-white border border-gray-100 rounded-2xl p-8 flex flex-col justify-between min-h-[200px] shadow-card">
+            <div class="font-display text-5xl text-[#8B1A1A] leading-none">40</div>
             <div>
-              <h3 class="text-white font-semibold text-xl mb-2">40 años de trayectoria</h3>
-              <p class="text-white/70 text-sm leading-relaxed">40 años de trayectoria en obra pública para
-                administraciones y organismos de toda España.</p>
+              <h3 class="text-brand-dark font-semibold text-xl mb-2">Años de trayectoria</h3>
+              <p class="text-brand-muted text-sm leading-relaxed">Obra pública para administraciones y organismos de toda España desde 1986.</p>
             </div>
           </div>
 
           <!-- Cell — Cumplimiento -->
-          <div
-            class="reveal reveal-delay-2 bg-white border border-gray-100 rounded-2xl p-8 flex flex-col justify-end min-h-[160px] shadow-card">
+          <div class="reveal reveal-delay-2 bg-white border border-gray-100 rounded-2xl p-8 flex flex-col justify-end min-h-[200px] shadow-card">
             <div>
               <h3 class="text-brand-dark font-semibold text-lg mb-2">Cumplimiento y transparencia</h3>
               <p class="text-brand-muted text-sm leading-relaxed">Documentación completa, plazos respetados y
@@ -270,22 +269,10 @@
             </div>
           </div>
 
-          <!-- Cell — ISO (2 cols) -->
-          <div
-            class="reveal reveal-delay-3 md:col-span-2 bg-[#f8f9fa] border border-gray-100 rounded-2xl p-8 flex flex-col md:flex-row items-start md:items-center gap-6 min-h-[160px]">
-            <div class="flex gap-3 flex-shrink-0">
-              <span
-                class="font-display text-2xl text-[#8B1A1A] border border-[#8B1A1A]/30 rounded-full px-4 py-2">9001</span>
-              <span
-                class="font-display text-2xl text-[#8B1A1A] border border-[#8B1A1A]/30 rounded-full px-4 py-2">14001</span>
-              <span
-                class="font-display text-2xl text-[#8B1A1A] border border-[#8B1A1A]/30 rounded-full px-4 py-2">27001</span>
-            </div>
-            <div>
-              <h3 class="text-brand-dark font-semibold text-lg mb-1">Certificados ISO 9001, 14001 y 27001</h3>
-              <p class="text-brand-muted text-sm leading-relaxed">Sistemas de gestión de calidad, medioambiente y
-                seguridad de la información. Auditados anualmente — requisito habitual en licitaciones públicas.</p>
-            </div>
+          <!-- Cell — Cobertura Nacional -->
+          <div class="reveal reveal-delay-3 md:col-span-2 bg-[#f8f9fa] border border-gray-100 rounded-2xl p-8 flex flex-col justify-between min-h-[200px] shadow-card">
+            <div class="font-display text-3xl text-[#8B1A1A] leading-tight whitespace-nowrap uppercase">Cobertura Nacional</div>
+            <p class="text-brand-muted text-sm leading-relaxed">Presencia en las 17 comunidades autónomas. Obra pública para administraciones locales, regionales y estatales.</p>
           </div>
 
         </div>
@@ -347,30 +334,30 @@
 
           <!-- Card — Instalaciones sanitarias -->
           <div
-            class="reveal reveal-delay-2 service-card bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-card card-lift flex flex-row">
+            class="reveal reveal-delay-2 service-card bg-white rounded-2xl overflow-hidden shadow-card card-lift flex flex-row border border-gray-100">
             <div class="w-32 flex-shrink-0 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=300&h=400&fit=crop&q=80"
-                alt="Instalaciones sanitarias" class="w-full h-full object-cover opacity-70">
+                alt="Instalaciones sanitarias" class="w-full h-full object-cover">
             </div>
             <div class="p-6 flex flex-col justify-center">
-              <span class="text-xs font-semibold uppercase tracking-wider text-[#8B1A1A] mb-2">03</span>
-              <h3 class="text-base font-bold text-white mb-2">Instalaciones sanitarias</h3>
-              <p class="text-white/50 text-xs leading-relaxed">Quirófanos, TAC, resonancias magnéticas. Instalaciones
+              <span class="text-xs font-semibold uppercase tracking-wider text-primary mb-2">03</span>
+              <h3 class="text-base font-bold text-brand-dark mb-2">Instalaciones sanitarias</h3>
+              <p class="text-brand-muted text-xs leading-relaxed">Quirófanos, TAC, resonancias magnéticas. Instalaciones
                 críticas donde el margen de error es cero.</p>
             </div>
           </div>
 
           <!-- Card grande — Media y baja tensión -->
           <div
-            class="reveal reveal-delay-3 service-card bg-[#8B1A1A] rounded-2xl overflow-hidden shadow-card card-lift flex flex-col lg:flex-row lg:col-span-2">
+            class="reveal reveal-delay-3 service-card bg-white rounded-2xl overflow-hidden shadow-card card-lift flex flex-col lg:flex-row lg:col-span-2 border border-gray-100">
             <div class="lg:w-64 flex-shrink-0 overflow-hidden h-48 lg:h-auto">
               <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop&q=80"
-                alt="Media y baja tensión" class="w-full h-full object-cover opacity-80">
+                alt="Media y baja tensión" class="w-full h-full object-cover">
             </div>
             <div class="p-7 flex flex-col justify-center">
-              <span class="text-xs font-semibold uppercase tracking-wider text-white/50 mb-3">04</span>
-              <h3 class="text-xl font-bold text-white mb-3">Media y baja tensión</h3>
-              <p class="text-white/70 text-sm leading-relaxed">Centros de transformación, líneas de media tensión,
+              <span class="text-xs font-semibold uppercase tracking-wider text-primary mb-3">04</span>
+              <h3 class="text-xl font-bold text-brand-dark mb-3">Media y baja tensión</h3>
+              <p class="text-brand-muted text-sm leading-relaxed">Centros de transformación, líneas de media tensión,
                 cuadros de distribución y redes de baja tensión para todo tipo de edificios e instalaciones públicas.
               </p>
             </div>
@@ -393,8 +380,7 @@
     <section id="proceso" class="py-20 md:py-24 bg-[#1a1a1a]">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16 reveal">
-          <span
-            class="inline-block bg-[#8B1A1A]/20 text-[#8B1A1A] text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 mb-4 rounded-sm">Proceso</span>
+          <span class="section-badge section-badge--dark">Proceso</span>
           <h2 class="font-display text-5xl md:text-6xl text-white">CÓMO LO HACEMOS</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 mt-4">
@@ -407,7 +393,7 @@
             <div class="relative z-10">
               <div class="font-display text-5xl text-[#8B1A1A] mb-6">01</div>
               <h3 class="text-white font-semibold text-lg mb-3">Licitación</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Participamos en concursos públicos aportando toda la
+              <p class="text-white/70 text-sm leading-relaxed">Participamos en concursos públicos aportando toda la
                 documentación técnica, económica y de solvencia que exige el pliego de condiciones.</p>
             </div>
           </div>
@@ -420,7 +406,7 @@
             <div class="relative z-10">
               <div class="font-display text-5xl text-[#8B1A1A] mb-6">02</div>
               <h3 class="text-white font-semibold text-lg mb-3">Proyecto técnico</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Elaboramos o revisamos el proyecto de instalaciones,
+              <p class="text-white/70 text-sm leading-relaxed">Elaboramos o revisamos el proyecto de instalaciones,
                 coordinándonos con la dirección facultativa y adaptándonos a la normativa vigente.</p>
             </div>
           </div>
@@ -433,7 +419,7 @@
             <div class="relative z-10">
               <div class="font-display text-5xl text-[#8B1A1A] mb-6">03</div>
               <h3 class="text-white font-semibold text-lg mb-3">Ejecución</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Equipo propio en obra, con seguimiento continuo de
+              <p class="text-white/70 text-sm leading-relaxed">Equipo propio en obra, con seguimiento continuo de
                 calidad,
                 seguridad y plazos. Coordinación con el resto de gremios y la propiedad.</p>
             </div>
@@ -447,7 +433,7 @@
             <div class="relative z-10">
               <div class="font-display text-5xl text-[#8B1A1A] mb-6">04</div>
               <h3 class="text-white font-semibold text-lg mb-3">Recepción de obra</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Legalización de instalaciones ante los organismos
+              <p class="text-white/70 text-sm leading-relaxed">Legalización de instalaciones ante los organismos
                 competentes, entrega de certificados y documentación as-built al organismo contratante.</p>
             </div>
           </div>
@@ -677,11 +663,11 @@
 
             <div
               class="reveal reveal-delay-3 flex items-center gap-6 bg-white/10 border border-white/10 rounded-2xl px-8 py-6 hover:bg-white/15 transition-colors duration-200">
-              <span class="font-display text-4xl text-white">27001</span>
+              <span class="font-display text-4xl text-white">45001</span>
               <div class="w-px h-10 bg-white/20 flex-shrink-0"></div>
               <div>
-                <p class="text-white font-semibold text-sm">ISO 27001</p>
-                <p class="text-white/50 text-xs mt-0.5">Sistema de Gestión de Seguridad de la Información</p>
+                <p class="text-white font-semibold text-sm">ISO 45001</p>
+                <p class="text-white/50 text-xs mt-0.5">Sistema de Gestión de Seguridad y Salud en el Trabajo</p>
               </div>
             </div>
 
@@ -715,7 +701,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
           <!-- CTAs de contacto directo -->
-          <div class="bg-brand-dark rounded-2xl p-8 md:p-10 flex flex-col justify-between">
+          <div class="[background:linear-gradient(135deg,#8B1A1A_0%,#1a1a1a_60%)] rounded-2xl p-8 md:p-10 flex flex-col justify-between">
             <div>
               <h3 class="font-display text-3xl text-white mb-3">Contacto directo</h3>
               <p class="text-white/60 text-sm leading-relaxed mb-8">
@@ -852,7 +838,7 @@
 
           <!-- Right: CTA card -->
           <div class="reveal reveal-delay-1">
-            <div class="bg-brand-dark rounded-2xl p-8 md:p-10">
+            <div class="[background:linear-gradient(135deg,#8B1A1A_0%,#1a1a1a_60%)] rounded-2xl p-8 md:p-10">
               <h3 class="font-display text-3xl text-white mb-3">¿Te interesa?</h3>
               <p class="text-white/60 text-sm leading-relaxed mb-8">
                 Envíanos tu CV a nuestra dirección de email. Revisamos todas las candidaturas y contactamos cuando
@@ -902,37 +888,22 @@
   <footer class="bg-[#1a1a1a]" role="contentinfo">
 
     <!-- Grid -->
-    <div class="max-w-6xl mx-auto px-6 py-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
 
-        <!-- Col 1 — Logo + descripción -->
-        <div>
-          <a href="#inicio" class="inline-block mb-5">
-            <img src="img/logo.png" alt="Decon 86" class="h-8 w-auto logo-blend">
-          </a>
-          <p class="text-white/40 text-sm leading-relaxed mb-5">
-            Instalaciones eléctricas y telecomunicaciones en toda España desde 1986.
-          </p>
-          <div class="flex gap-2 flex-wrap">
-            <span class="text-xs font-semibold text-white/40 border border-white/20 rounded-full px-3 py-1">ISO
-              9001</span>
-            <span class="text-xs font-semibold text-white/40 border border-white/20 rounded-full px-3 py-1">ISO
-              14001</span>
-            <span class="text-xs font-semibold text-white/40 border border-white/20 rounded-full px-3 py-1">ISO
-              27001</span>
-          </div>
-        </div>
+        <!-- Logo -->
+        <a href="#inicio" class="inline-block flex-shrink-0">
+          <img src="img/logo.png" alt="Decon 86" class="h-12 w-auto logo-blend">
+        </a>
 
-        <!-- Col 2 — Contacto -->
-        <div>
-          <h3 class="text-xs uppercase tracking-[0.2em] text-white/30 mb-5">Contacto</h3>
-          <ul class="flex flex-col gap-3 text-sm text-white/50">
-            <li>Av. de Santa Eugenia, 12, 28031 Madrid</li>
-            <li><a href="tel:+34913324770" class="hover:text-white transition-colors duration-200">91 332 47 70</a></li>
-            <li><a href="mailto:obras@decon86.net"
-                class="hover:text-white transition-colors duration-200">obras@decon86.net</a></li>
-          </ul>
-        </div>
+        <!-- Contacto inline -->
+        <ul class="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6 text-sm text-white/70">
+          <li>Av. de Santa Eugenia, 12, 28031 Madrid</li>
+          <li class="hidden md:block text-white/20">·</li>
+          <li><a href="tel:+34913324770" class="hover:text-white transition-colors duration-200">91 332 47 70</a></li>
+          <li class="hidden md:block text-white/20">·</li>
+          <li><a href="mailto:obras@decon86.net" class="hover:text-white transition-colors duration-200">obras@decon86.net</a></li>
+        </ul>
 
       </div>
     </div>
