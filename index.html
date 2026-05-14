@@ -1,973 +1,1136 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Decon 86, S.A. — Constructora e instaladora especializada en electricidad y telecomunicaciones. Más de 40 años de experiencia a nivel nacional.">
-  <title>Decon 86 — Instalaciones Eléctricas y Telecomunicaciones en España</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Antonio Junquera Criado · Cloud Architect &amp; Technical Lead</title>
+  <meta name="description" content="CV online de Antonio Junquera Criado, Cloud Architect y Technical Lead con más de 10 años de experiencia en ecosistema Microsoft y Azure." />
+  <meta name="keywords" content="CV, Antonio Junquera, Cloud Architect, Technical Lead, Azure, .NET, Resume, Portfolio" />
+  <meta name="author" content="Antonio Junquera" />
+  <link rel="shortcut icon" href="favicon.ico">
 
-  <!-- Google Fonts — Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <meta property="og:title" content="Antonio Junquera Criado · Cloud Architect &amp; Technical Lead" />
+  <meta property="og:description" content="CV online de Antonio Junquera Criado, Cloud Architect y Technical Lead con más de 10 años de experiencia en ecosistema Microsoft y Azure." />
+  <meta property="og:image" content="images/pequenia.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tonijc.github.io" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  <!-- Tailwind Config — Design Tokens -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: { DEFAULT: '#8B1A1A', dark: '#6B1414' },
-            brand: { dark: '#1a1a1a', muted: '#6b7280', button: '#1a1a1a' }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Bebas Neue', 'system-ui', 'sans-serif'],
-          },
-          boxShadow: { card: '6px 6px 9px rgba(0,0,0,0.2)' }
-        }
+  <style>
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background: #f9fbfd;
+      color: #222;
+      margin: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #2074e7 0%, #1de9b6 100%);
+      color: #fff;
+      padding: 40px 0 30px 0;
+      box-shadow: 0 3px 20px #00000015;
+    }
+    .header-content {
+      max-width: 1024px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      padding: 0 18px;
+    }
+    .my-photo img {
+      border-radius: 16px;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 2px 16px #1112;
+      background: #fff;
+      display: block;
+    }
+    .site-title-block {
+      flex: 1;
+      min-width: 200px;
+    }
+    .site-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 2.3rem;
+      margin: 0;
+    }
+    .site-subtitle {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-top: 4px;
+      opacity: 0.95;
+    }
+    .site-nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      font-weight: 600;
+    }
+    .site-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .site-nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #1de9b6;
+      transition: width 0.3s;
+      margin: 0 auto;
+    }
+    .site-nav a:hover::after, .site-nav a.active::after {
+      width: 80%;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .social-links a {
+      color: #fff;
+      margin-right: 4px;
+      font-size: 1.5rem;
+      opacity: 0.9;
+      transition: color 0.2s;
+    }
+    .social-links a:hover { color: #1de9b6; }
+    .btn-cv {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.7);
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-cv:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: #1de9b6;
+      color: #fff;
+    }
+    @media (max-width: 800px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .site-nav ul { flex-direction: column; gap: 10px; }
+      .my-photo img { width: 120px; height: 120px; }
+      .btn-cv {
+        position: fixed;
+        bottom: 14px; right: 16px; z-index: 20;
+        box-shadow: 0 3px 12px #2074e799;
+        border: 2px solid #1de9b6;
       }
     }
-  </script>
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+    main {
+      max-width: 1050px;
+      margin: 35px auto 0 auto;
+      padding: 0 18px 60px 18px;
+      background: #fff;
+      box-shadow: 0 3px 32px #0001;
+      border-radius: 18px;
+      min-height: 60vh;
+      animation: fadein 0.8s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(32px); }
+      to { opacity: 1; transform: none; }
+    }
+    section {
+      margin-bottom: 40px;
+      padding-top: 24px;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin-top: 0;
+    }
+    h2 {
+      border-bottom: 2px solid #eaf3f9;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Sobre mí */
+    .about-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 36px;
+      margin-top: 12px;
+      margin-bottom: 22px;
+    }
+    .about-secondary-photo {
+      min-width: 140px;
+      width: 400px;
+      height: 440px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 3px 14px #1112;
+      border: 3px solid #eaf3f9;
+      background: #fff;
+    }
+    .about-description { flex: 1; }
+    @media (max-width: 700px) {
+      .about-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+      }
+      .about-secondary-photo {
+        width: 90vw;
+        max-width: 320px;
+        height: 190px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    /* Cards */
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      margin: 18px 0 8px 0;
+    }
+    .card-list-item {
+      background: #f3faff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #1de9b60c;
+      padding: 14px 20px 14px 16px;
+      font-size: 1.02em;
+      display: flex;
+      align-items: flex-start;
+      min-width: 250px;
+      flex: 1 1 300px;
+      transition: box-shadow 0.18s, background 0.18s;
+      border: 1.5px solid #eaf3f9;
+      cursor: default;
+    }
+    .card-list-item .icon {
+      margin-right: 13px;
+      font-size: 1.24em;
+      color: #2074e7cc;
+      flex-shrink: 0;
+      transition: color 0.2s;
+      padding-top: 2px;
+    }
+    .card-list-item:hover {
+      box-shadow: 0 4px 18px #2074e72a;
+      background: #e7f8f9;
+      border-color: #1de9b6;
+    }
+    .card-list-item:hover .icon { color: #1de9b6; }
+    .card-list-item small {
+      display: block;
+      color: #555;
+      font-size: 0.88em;
+      margin-top: 3px;
+    }
+    @media (max-width: 700px) {
+      .card-list { flex-direction: column; gap: 10px; }
+      .card-list-item { min-width: unset; }
+    }
+
+    /* Tech tags */
+    .tech-section { margin-bottom: 20px; }
+    .tech-section h4 {
+      font-size: 0.82em;
+      color: #888;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+    }
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tech-tag {
+      background: #f3faff;
+      border: 1.5px solid #d4eaf9;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.9em;
+      color: #2074e7;
+      font-weight: 500;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .tech-tag:hover {
+      background: #e7f8f9;
+      border-color: #1de9b6;
+    }
+
+    /* Timeline */
+    .timeline {
+      border-left: 4px solid #2074e7;
+      margin-left: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .timeline-item {
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: -32px;
+      top: 6px;
+      width: 16px; height: 16px;
+      background: #fff;
+      border: 3px solid #1de9b6;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px #1de9b660;
+    }
+    .timeline-period { font-weight: bold; color: #2074e7; font-size: 1.05em; }
+    .timeline-company { font-size: 0.97em; color: #1de9b6; font-weight: 600; }
+    .timeline-title { font-size: 1.05em; margin: 2px 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 600; }
+    .timeline-desc { margin: 0 0 0.5em 0; font-size: 0.96em; color: #444; }
+    @media (max-width: 700px) {
+      .timeline { padding-left: 12px; }
+      .timeline-item:before { left: -24px; width: 12px; height: 12px; }
+    }
+
+    /* Idiomas */
+    .lang-list {
+      padding-left: 0;
+      list-style: none;
+      margin: 12px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .lang-list li {
+      font-size: 1.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lang-level {
+      background: #2074e7;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 0.9em;
+      padding: 3px 12px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 48px;
+      align-items: start;
+    }
+    .two-col > div > h3 { margin-top: 0; }
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    .copyrights {
+      font-size: 0.9em;
+      color: #999;
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #eaf3f9;
+      margin-top: 20px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      border-bottom: 2px solid #eaf3f9;
+      margin-bottom: 28px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      padding: 10px 22px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.97rem;
+      color: #888;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .tab-btn:hover { color: #2074e7; }
+    .tab-btn.active {
+      color: #2074e7;
+      border-bottom-color: #2074e7;
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadein 0.3s; }
+
+    /* Accordion */
+    .accordion {
+      margin-top: 28px;
+      border: 1.5px solid #eaf3f9;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .accordion-btn {
+      width: 100%;
+      background: #f9fbfd;
+      border: none;
+      padding: 14px 20px;
+      text-align: left;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #444;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s, color 0.2s;
+    }
+    .accordion-btn:hover { background: #eaf3f9; color: #2074e7; }
+    .accordion-btn .chevron {
+      transition: transform 0.25s;
+      color: #2074e7;
+      font-size: 0.85em;
+    }
+    .accordion-btn.open .chevron { transform: rotate(180deg); }
+    .accordion-panel {
+      display: none;
+      padding: 18px 20px;
+      background: #fff;
+    }
+    .accordion-panel.open { display: block; animation: fadein 0.25s; }
+
+    /* ── TYPOGRAPHY UPGRADE ──────────────────── */
+    body { font-family: 'DM Sans', Arial, sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Bricolage Grotesque', Arial, sans-serif; }
+
+    /* ── HEADER REDESIGN ─────────────────────── */
+    header {
+      background: linear-gradient(140deg, #060f1f 0%, #0b2540 50%, #072e28 100%);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: none;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(29,233,182,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29,233,182,0.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      pointer-events: none;
+    }
+    .header-inner {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .header-top {
+      display: flex;
+      justify-content: flex-end;
+      padding: 22px 0 0;
+    }
+    .header-nav-new {
+      display: flex;
+      gap: 28px;
+    }
+    .header-nav-new a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .header-nav-new a:hover, .header-nav-new a.active { color: #1de9b6; }
+    .header-body {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 36px 0 52px;
+      gap: 32px;
+    }
+    .header-eyebrow {
+      display: block;
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #1de9b6;
+      margin-bottom: 14px;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .header-name-new {
+      font-family: 'Bricolage Grotesque', Arial, sans-serif;
+      font-size: clamp(3rem, 6.5vw, 5.2rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -2.5px;
+      color: #fff;
+      margin: 0 0 36px;
+    }
+    .header-actions-new {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .social-links-new a {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.3rem;
+      transition: color 0.2s;
+      margin-right: 4px;
+    }
+    .social-links-new a:hover { color: #1de9b6; }
+    .header-photo-new { flex-shrink: 0; }
+    .header-photo-new img {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 3px solid transparent;
+      background:
+        linear-gradient(#0b2540, #0b2540) padding-box,
+        linear-gradient(135deg, #2074e7 0%, #1de9b6 100%) border-box;
+      box-shadow:
+        0 0 0 10px rgba(29,233,182,0.08),
+        0 24px 64px rgba(0,0,0,0.5);
+    }
+    @media (max-width: 720px) {
+      .header-inner { padding: 0 18px; }
+      .header-body { flex-direction: column; align-items: flex-start; padding: 28px 0 40px; }
+      .header-name-new { font-size: 3rem; letter-spacing: -1.5px; margin-bottom: 28px; }
+      .header-photo-new img { width: 120px; height: 120px; }
+    }
+
+    /* ── SECTION NUMBER INDICATORS ───────────── */
+    main { counter-reset: section-num; }
+    section { counter-increment: section-num; }
+    section h2 {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 6px;
+    }
+    section h2::before {
+      content: "0" counter(section-num);
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: #2074e7;
+      opacity: 0.55;
+      margin-bottom: 4px;
+    }
+    section h2::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 40px;
+      background: linear-gradient(90deg, #2074e7, #1de9b6);
+      margin-top: 10px;
+      margin-bottom: 22px;
+      border-radius: 2px;
+    }
+
+    /* ── SCROLL REVEAL ───────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+        transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal.in-view { opacity: 1; transform: none; }
+
+    /* ── STICKY NAV ──────────────────────────── */
+    .sticky-nav {
+      position: fixed;
+      top: -64px;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(6,15,31,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(29,233,182,0.12);
+      transition: top 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .sticky-nav.visible { top: 0; }
+    .sticky-nav-inner {
+      max-width: 1050px;
+      margin: auto;
+      padding: 13px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sticky-nav-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+    .sticky-nav-links { display: flex; gap: 24px; }
+    .sticky-nav-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .sticky-nav-links a:hover,
+    .sticky-nav-links a.active { color: #1de9b6; }
+
+    /* ── ABOUT PHOTO ─────────────────────────── */
+    .about-secondary-photo {
+      width: 220px;
+      min-width: 220px;
+      height: 270px;
+      border-radius: 110px 110px 24px 24px;
+      object-fit: cover;
+      object-position: top center;
+      border: 3px solid transparent;
+      background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(135deg, #2074e7, #1de9b6) border-box;
+      box-shadow: 0 8px 28px rgba(32,116,231,0.15);
+    }
+    @media (max-width: 700px) {
+      .about-secondary-photo {
+        width: 130px;
+        min-width: 130px;
+        height: 160px;
+        border-radius: 65px 65px 16px 16px;
+      }
+    }
+
+    /* ── PRINT ───────────────────────────────── */
+    @media print {
+      * { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .tab-panel { display: block !important; }
+      .accordion-panel { display: block !important; }
+      .tabs, .accordion-btn, .sticky-nav,
+      .header-actions-new, .header-nav-new { display: none !important; }
+      header {
+        background: #fff !important;
+        color: #222 !important;
+        padding: 20px 32px !important;
+      }
+      header::before { display: none !important; }
+      .header-name-new {
+        color: #222 !important;
+        font-size: 2.4rem !important;
+        letter-spacing: -1px !important;
+      }
+      .header-eyebrow { color: #2074e7 !important; }
+      .header-photo-new img {
+        box-shadow: none !important;
+        width: 120px !important;
+        height: 120px !important;
+      }
+      .header-body { padding: 16px 0 24px !important; }
+      main {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        margin-top: 4px !important;
+        padding-bottom: 16px !important;
+      }
+      section { page-break-inside: avoid; margin-bottom: 20px !important; }
+      .timeline-item { page-break-inside: avoid; }
+      .about-secondary-photo, .copyrights { display: none !important; }
+    }
+  </style>
 </head>
 
-<body class="font-sans text-brand-muted bg-white overflow-x-hidden">
-
-  <!-- ══════════════════════════════════════════════════════════
-       NAVBAR
-       ══════════════════════════════════════════════════════════ -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 h-20" style="background-color:#1a1a1a;" role="navigation"
-    aria-label="Navegación principal">
-    <div class="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
-
-      <!-- Logo — far left -->
-      <a href="#inicio" class="flex-shrink-0">
-        <img src="img/logo.png" alt="Deconsa 86" class="h-14 w-auto logo-blend">
-      </a>
-
-      <!-- Desktop nav links — centered via mx-auto -->
-      <ul class="hidden lg:flex items-center gap-8 text-[15px] mx-auto">
-        <li><a href="#inicio" class="text-white hover:text-red-400 transition-colors duration-200">Inicio</a></li>
-        <li><a href="#nosotros" class="text-white hover:text-red-400 transition-colors duration-200">Nosotros</a></li>
-        <li><a href="#servicios" class="text-white hover:text-red-400 transition-colors duration-200">Servicios</a></li>
-        <li><a href="#proceso" class="text-white hover:text-red-400 transition-colors duration-200">Proceso</a></li>
-        <!-- <li><a href="#proyectos"       class="text-white hover:text-red-400 transition-colors duration-200">Proyectos</a></li> -->
-        <li><a href="#certificaciones"
-            class="text-white hover:text-red-400 transition-colors duration-200">Certificaciones</a></li>
-        <li><a href="#contacto" class="text-white hover:text-red-400 transition-colors duration-200">Contacto</a></li>
-        <li><a href="#empleo" class="text-white hover:text-red-400 transition-colors duration-200">Empleo</a></li>
-      </ul>
-
-      <!-- Phone CTA — far right -->
-      <a href="tel:+34913324770"
-        class="hidden lg:flex items-center gap-2 bg-[#8B1A1A] hover:bg-[#6B1414] text-white text-sm font-medium rounded-full px-4 py-2 transition-colors duration-200 flex-shrink-0">
-        91 332 47 70
-      </a>
-
-      <!-- Hamburger mobile -->
-      <button id="menu-btn"
-        class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] focus:outline-none"
-        aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center"></span>
-        <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center"></span>
-      </button>
+<body>
+  <header role="banner" aria-label="Cabecera principal">
+    <div class="header-inner">
+      <div class="header-top">
+        <nav class="header-nav-new" aria-label="Menú principal">
+          <a href="#sobre-mi" class="active">Sobre mí</a>
+          <a href="#experiencia">Experiencia</a>
+        </nav>
+      </div>
+      <div class="header-body">
+        <div class="header-left">
+          <span class="header-eyebrow">Cloud Architect &amp; Technical Lead</span>
+          <h1 class="header-name-new">Antonio<br>Junquera<br>Criado</h1>
+          <div class="header-actions-new">
+            <div class="social-links-new">
+              <a href="https://www.linkedin.com/in/antonio-junquera-criado-41988910a/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <a href="CV_AJC.pdf" target="_blank" class="btn-cv" aria-label="Descargar CV">
+              <i class="fas fa-download"></i> Descargar CV
+            </a>
+          </div>
+        </div>
+        <div class="header-photo-new">
+          <img src="images/pequenia.jpeg" alt="Foto profesional de Antonio Junquera">
+        </div>
+      </div>
     </div>
+  </header>
 
-    <!-- Mobile drawer -->
-    <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 px-6 py-4" style="background-color:#1a1a1a;">
-      <ul class="flex flex-col gap-4 text-[15px]">
-        <li><a href="#inicio" class="block text-white hover:text-red-400 transition-colors duration-200 py-1">Inicio</a>
-        </li>
-        <li><a href="#nosotros"
-            class="block text-white hover:text-red-400 transition-colors duration-200 py-1">Nosotros</a></li>
-        <li><a href="#servicios"
-            class="block text-white hover:text-red-400 transition-colors duration-200 py-1">Servicios</a></li>
-        <li><a href="#proceso"
-            class="block text-white hover:text-red-400 transition-colors duration-200 py-1">Proceso</a></li>
-        <!-- <li><a href="#proyectos"       class="block text-white hover:text-red-400 transition-colors duration-200 py-1">Proyectos</a></li> -->
-        <li><a href="#certificaciones"
-            class="block text-white hover:text-red-400 transition-colors duration-200 py-1">Certificaciones</a></li>
-        <li><a href="#contacto"
-            class="block text-white hover:text-red-400 transition-colors duration-200 py-1">Contacto</a></li>
-        <li><a href="#empleo" class="block text-white hover:text-red-400 transition-colors duration-200 py-1">Empleo</a>
-        </li>
-      </ul>
-      <a href="#contacto" class="btn-primary mt-4 w-full text-center block">Contáctanos</a>
+  <div class="sticky-nav" role="navigation" aria-label="Navegación fija">
+    <div class="sticky-nav-inner">
+      <span class="sticky-nav-name">Antonio Junquera</span>
+      <div class="sticky-nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+      </div>
     </div>
-  </nav>
+  </div>
 
   <main>
 
-    <!-- ══════════════════════════════════════════════════════════
-         HERO
-         ══════════════════════════════════════════════════════════ -->
-    <section id="inicio" class="min-h-screen relative overflow-hidden flex items-end">
-      <!-- Background image -->
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&q=80"
-        alt="Obra de construcción con operarios trabajando en estructura"
-        class="absolute inset-0 w-full h-full object-cover" />
-      <!-- Dark overlay — heavier on left, lighter on right -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/95 via-[#1a1a1a]/70 to-[#1a1a1a]/20"></div>
-      <!-- Bottom gradient for wave blending -->
-      <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1a1a1a] to-transparent"></div>
-      <!-- Red accent bar at bottom -->
-      <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#8B1A1A] z-10"></div>
-      <!-- Content -->
-      <div class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10 pb-24 pt-36">
-        <div class="hero-title max-w-4xl">
-          <span
-            class="inline-block bg-[#8B1A1A] text-white text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 mb-6 rounded-sm">Especialistas
-            en instalaciones · Madrid · Desde 1986</span>
-          <h1 class="font-display text-7xl md:text-8xl lg:text-[9rem] text-white leading-none mb-6">
-            CADA OBRA, <span class="text-[#8B1A1A]">UN</span><br>
-            COMPROMISO
-          </h1>
-        </div>
-        <p class="hero-sub text-white/60 text-lg md:text-xl max-w-lg mb-10 leading-relaxed">
-          Quirófanos, TAC, resonancias, centros educativos, instalaciones industriales. 40 años haciendo las
-          instalaciones más exigentes
-          de España.
-        </p>
-        <div class="hero-buttons flex flex-col sm:flex-row gap-4">
-          <a href="#contacto" class="btn-dark text-center">Solicitar presupuesto</a>
-          <a href="#nosotros" class="btn-outline-white text-center">Conocer más</a>
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <div class="about-wrapper">
+        <img class="about-secondary-photo" src="images/principal.jpeg" alt="Foto adicional de Antonio Junquera">
+        <div class="about-description">
+          <p>Ingeniero informático con más de 10 años de experiencia en desarrollo de software y arquitectura Cloud, con un fuerte componente de liderazgo técnico. He trabajado en entornos de alta exigencia (desde aerolíneas hasta tecnología deportiva) coordinando equipos, tomando decisiones de arquitectura y siendo el nexo entre negocio y técnica.</p>
+          <p>Mi especialización principal gira en torno al ecosistema Microsoft: .NET, Azure y la integración de sistemas complejos. Me muevo con igual comodidad en la pizarra diseñando una solución que en el código implementándola.</p>
+          <p>He coordinado equipos de hasta 15 personas en entornos donde el error tiene coste real. Para mí, la arquitectura no es un documento: es una decisión que alguien tiene que defender en producción.</p>
+          <blockquote style="margin-top:24px; color:#1de9b6; font-style: italic; border-left: 3px solid #1de9b6; padding-left: 14px; margin-left: 0;">
+            "Hacer la mitad de algo es esencialmente, no hacer nada" · Jeff Sutherland
+          </blockquote>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════════════════════
-         STATS BAR
-         ══════════════════════════════════════════════════════════ -->
-    <section class="bg-[#1a1a1a] py-16 overflow-hidden">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/10">
-
-          <div class="reveal px-8 py-6 relative">
-            <div
-              class="font-display text-[80px] md:text-[100px] leading-none text-white/5 absolute -top-2 -left-2 select-none pointer-events-none">
-              40</div>
-            <div class="relative z-10">
-              <div class="font-display text-5xl md:text-6xl text-[#8B1A1A] stat-number" data-target="40" data-suffix="">
-                0</div>
-              <div class="text-white/50 text-xs uppercase tracking-[0.2em] mt-1">Años activos</div>
-            </div>
+    <!-- CAPACIDADES -->
+    <section>
+      <h2>Capacidades</h2>
+      <div class="card-list">
+        <div class="card-list-item">
+          <span class="icon"><i class="fas fa-cloud"></i></span>
+          <div>
+            <strong>Arquitectura Cloud</strong>
+            <small>Diseño de soluciones en Azure: integraciones, microservicios, pipelines de datos y arquitecturas event-driven. Con criterio de coste y escalabilidad.</small>
           </div>
-
-          <div class="reveal reveal-delay-1 px-8 py-6 relative">
-            <div
-              class="font-display text-[80px] md:text-[100px] leading-none text-white/5 absolute -top-2 -left-2 select-none pointer-events-none">
-              500</div>
-            <div class="relative z-10">
-              <div class="font-display text-5xl md:text-6xl text-[#8B1A1A] stat-number" data-target="500">0</div>
-              <div class="text-white/50 text-xs uppercase tracking-[0.2em] mt-1">Obras completadas</div>
-            </div>
-          </div>
-
-          <div class="reveal reveal-delay-2 px-8 py-6 relative">
-            <div
-              class="font-display text-[80px] md:text-[100px] leading-none text-white/5 absolute -top-2 -left-2 select-none pointer-events-none">
-              ISO</div>
-            <div class="relative z-10">
-              <div class="font-display text-5xl md:text-6xl text-[#8B1A1A]">ISO</div>
-              <div class="text-white/50 text-xs uppercase tracking-[0.2em] mt-1">9001 · 14001 · 27001</div>
-            </div>
-          </div>
-
-          <div class="reveal reveal-delay-3 px-8 py-6 relative">
-            <div
-              class="font-display text-[80px] md:text-[100px] leading-none text-white/5 absolute -top-2 -left-2 select-none pointer-events-none">
-              1986</div>
-            <div class="relative z-10">
-              <div class="font-display text-5xl md:text-6xl text-[#8B1A1A]">1986</div>
-              <div class="text-white/50 text-xs uppercase tracking-[0.2em] mt-1">Fundación · Madrid</div>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
-
-    <!-- Wave divider: dark stats → white nosotros (Wave A) -->
-    <div class="relative h-12 bg-white">
-      <svg class="absolute -top-1 left-0 w-full" viewBox="0 0 1440 48" preserveAspectRatio="none" fill="#1a1a1a">
-        <path d="M0,0 L1440,0 L1440,24 C1080,0 360,48 0,24 Z" />
-      </svg>
-    </div>
-
-    <!-- Clientes / Proyectos destacados strip — comentado
-    <section class="py-8 bg-white border-b border-gray-100">
-      <div class="max-w-6xl mx-auto px-6">
-        <p class="text-center text-xs uppercase tracking-[0.2em] text-gray-400 mb-6">Proyectos realizados para</p>
-        <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-          <span class="text-gray-300 font-semibold text-lg hover:text-gray-500 transition-colors cursor-default">CEIP San Gregorio</span>
-          <span class="text-gray-300 font-semibold text-lg hover:text-gray-500 transition-colors cursor-default">Colegio El Molar</span>
-          <span class="text-gray-300 font-semibold text-lg hover:text-gray-500 transition-colors cursor-default">Piscina Municipal</span>
-          <span class="text-gray-300 font-semibold text-lg hover:text-gray-500 transition-colors cursor-default">Instalación TAC</span>
-          <span class="text-gray-300 font-semibold text-lg hover:text-gray-500 transition-colors cursor-default">Teatro</span>
-          <span class="text-gray-300 font-semibold text-lg hover:text-gray-500 transition-colors cursor-default">Cancha Deportiva</span>
+        <div class="card-list-item">
+          <span class="icon"><i class="fas fa-people-group"></i></span>
+          <div>
+            <strong>Liderazgo Técnico</strong>
+            <small>De los requisitos a producción: decisiones de arquitectura, coordinación de equipo y punto de contacto directo entre negocio y desarrollo.</small>
+          </div>
         </div>
-      </div>
-    </section>
-    -->
-
-    <!-- ══════════════════════════════════════════════════════════
-         NOSOTROS
-         ══════════════════════════════════════════════════════════ -->
-    <section id="nosotros" class="py-20 md:py-24 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-
-        <!-- Header -->
-        <div class="text-center mb-16">
-          <span class="section-badge">Quiénes somos</span>
-          <h2 class="reveal font-display text-5xl md:text-6xl text-brand-dark mb-4">
-            CUATRO DÉCADAS AL SERVICIO DE LO PÚBLICO
-          </h2>
-          <p class="text-brand-muted text-base max-w-2xl mx-auto leading-relaxed">
-            Desde 1986 ejecutamos instalaciones eléctricas y de telecomunicaciones para colegios, hospitales y
-            equipamientos públicos en todo el territorio nacional. Rigor técnico, cumplimiento normativo y plazos
-            respetados.
-          </p>
+        <div class="card-list-item">
+          <span class="icon"><i class="fas fa-diagram-project"></i></span>
+          <div>
+            <strong>Integración de Sistemas</strong>
+            <small>Diseño e implementación de flujos entre sistemas heterogéneos. APIs REST/SOAP, Service Bus, Logic Apps, Workato y Azure Functions.</small>
+          </div>
         </div>
-
-        <!-- Bento grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
-
-          <!-- Cell grande — texto principal -->
-          <div class="reveal md:col-span-2 bg-[#2d2d2d] rounded-2xl p-8 flex flex-col justify-end min-h-[160px]">
-            <div>
-              <h3 class="text-white font-semibold text-xl mb-2">Equipo técnico propio</h3>
-              <p class="text-white/60 text-sm leading-relaxed">Personal propio y cualificado en cada obra.
-                Responsabilidad directa sobre la ejecución, sin intermediarios.</p>
-            </div>
-          </div>
-
-          <!-- Cell — Trayectoria -->
-          <div class="reveal reveal-delay-1 bg-[#8B1A1A] rounded-2xl p-8 flex flex-col justify-end min-h-[160px]">
-            <div>
-              <h3 class="text-white font-semibold text-xl mb-2">40 años de trayectoria</h3>
-              <p class="text-white/70 text-sm leading-relaxed">40 años de trayectoria en obra pública para
-                administraciones y organismos de toda España.</p>
-            </div>
-          </div>
-
-          <!-- Cell — Cumplimiento -->
-          <div
-            class="reveal reveal-delay-2 bg-white border border-gray-100 rounded-2xl p-8 flex flex-col justify-end min-h-[160px] shadow-card">
-            <div>
-              <h3 class="text-brand-dark font-semibold text-lg mb-2">Cumplimiento y transparencia</h3>
-              <p class="text-brand-muted text-sm leading-relaxed">Documentación completa, plazos respetados y
-                comunicación clara con la dirección facultativa.</p>
-            </div>
-          </div>
-
-          <!-- Cell — ISO (2 cols) -->
-          <div
-            class="reveal reveal-delay-3 md:col-span-2 bg-[#f8f9fa] border border-gray-100 rounded-2xl p-8 flex flex-col md:flex-row items-start md:items-center gap-6 min-h-[160px]">
-            <div class="flex gap-3 flex-shrink-0">
-              <span
-                class="font-display text-2xl text-[#8B1A1A] border border-[#8B1A1A]/30 rounded-full px-4 py-2">9001</span>
-              <span
-                class="font-display text-2xl text-[#8B1A1A] border border-[#8B1A1A]/30 rounded-full px-4 py-2">14001</span>
-              <span
-                class="font-display text-2xl text-[#8B1A1A] border border-[#8B1A1A]/30 rounded-full px-4 py-2">27001</span>
-            </div>
-            <div>
-              <h3 class="text-brand-dark font-semibold text-lg mb-1">Certificados ISO 9001, 14001 y 27001</h3>
-              <p class="text-brand-muted text-sm leading-relaxed">Sistemas de gestión de calidad, medioambiente y
-                seguridad de la información. Auditados anualmente — requisito habitual en licitaciones públicas.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════════
-         SERVICIOS
-         ══════════════════════════════════════════════════════════ -->
-    <section id="servicios" class="py-20 md:py-24 bg-[#f8f9fa]">
-      <div class="max-w-6xl mx-auto px-6">
-
-        <!-- Header -->
-        <div class="text-center mb-16">
-          <span class="section-badge">En qué trabajamos</span>
-          <h2 class="reveal font-display text-5xl md:text-6xl text-brand-dark mb-4">DÓNDE SOMOS ESPECIALISTAS</h2>
-          <p class="text-brand-muted text-base max-w-xl mx-auto leading-relaxed">
-            Cuatro áreas donde acumulamos la mayor parte de nuestra experiencia y los proyectos más exigentes.
-          </p>
-        </div>
-
-        <!-- Asymmetric 2-column layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
-
-          <!-- Card grande — Centros educativos -->
-          <div
-            class="reveal service-card bg-white rounded-2xl overflow-hidden shadow-card card-lift lg:row-span-2 flex flex-col">
-            <div class="relative overflow-hidden h-64 lg:h-72 flex-shrink-0">
-              <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=600&fit=crop&q=80"
-                alt="Centros educativos"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-            </div>
-            <div class="p-7 flex flex-col flex-1 justify-between">
-              <div>
-                <span class="inline-block text-xs font-semibold uppercase tracking-wider text-primary mb-3">01</span>
-                <h3 class="text-xl font-bold text-brand-dark mb-3">Centros educativos</h3>
-                <p class="text-brand-muted text-sm leading-relaxed">Colegios, institutos y equipamientos sociales.
-                  Instalaciones eléctricas, telecomunicaciones y sistemas de seguridad pensados para entornos de uso
-                  intensivo.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card — Rehabilitación industrial -->
-          <div
-            class="reveal reveal-delay-1 service-card bg-white rounded-2xl overflow-hidden shadow-card card-lift flex flex-row">
-            <div class="w-32 flex-shrink-0 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=300&h=400&fit=crop&q=80"
-                alt="Rehabilitación industrial" class="w-full h-full object-cover">
-            </div>
-            <div class="p-6 flex flex-col justify-center">
-              <span class="text-xs font-semibold uppercase tracking-wider text-primary mb-2">02</span>
-              <h3 class="text-base font-bold text-brand-dark mb-2">Rehabilitación industrial</h3>
-              <p class="text-brand-muted text-xs leading-relaxed">Naves, fábricas y almacenes. Adaptamos instalaciones a
-                nuevas normativas y necesidades.</p>
-            </div>
-          </div>
-
-          <!-- Card — Instalaciones sanitarias -->
-          <div
-            class="reveal reveal-delay-2 service-card bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-card card-lift flex flex-row">
-            <div class="w-32 flex-shrink-0 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=300&h=400&fit=crop&q=80"
-                alt="Instalaciones sanitarias" class="w-full h-full object-cover opacity-70">
-            </div>
-            <div class="p-6 flex flex-col justify-center">
-              <span class="text-xs font-semibold uppercase tracking-wider text-[#8B1A1A] mb-2">03</span>
-              <h3 class="text-base font-bold text-white mb-2">Instalaciones sanitarias</h3>
-              <p class="text-white/50 text-xs leading-relaxed">Quirófanos, TAC, resonancias magnéticas. Instalaciones
-                críticas donde el margen de error es cero.</p>
-            </div>
-          </div>
-
-          <!-- Card grande — Media y baja tensión -->
-          <div
-            class="reveal reveal-delay-3 service-card bg-[#8B1A1A] rounded-2xl overflow-hidden shadow-card card-lift flex flex-col lg:flex-row lg:col-span-2">
-            <div class="lg:w-64 flex-shrink-0 overflow-hidden h-48 lg:h-auto">
-              <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop&q=80"
-                alt="Media y baja tensión" class="w-full h-full object-cover opacity-80">
-            </div>
-            <div class="p-7 flex flex-col justify-center">
-              <span class="text-xs font-semibold uppercase tracking-wider text-white/50 mb-3">04</span>
-              <h3 class="text-xl font-bold text-white mb-3">Media y baja tensión</h3>
-              <p class="text-white/70 text-sm leading-relaxed">Centros de transformación, líneas de media tensión,
-                cuadros de distribución y redes de baja tensión para todo tipo de edificios e instalaciones públicas.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Wave divider: light servicios → dark proceso (Wave B) -->
-    <div class="relative h-12 bg-[#1a1a1a]">
-      <svg class="absolute -top-1 left-0 w-full" viewBox="0 0 1440 48" preserveAspectRatio="none" fill="#f8f9fa">
-        <path d="M0,0 L1440,0 L1440,24 C1080,48 360,0 0,24 Z" />
-      </svg>
-    </div>
-
-    <!-- ══════════════════════════════════════════════════════════
-         CÓMO TRABAJAMOS
-         ══════════════════════════════════════════════════════════ -->
-    <section id="proceso" class="py-20 md:py-24 bg-[#1a1a1a]">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16 reveal">
-          <span
-            class="inline-block bg-[#8B1A1A]/20 text-[#8B1A1A] text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 mb-4 rounded-sm">Proceso</span>
-          <h2 class="font-display text-5xl md:text-6xl text-white">CÓMO LO HACEMOS</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 mt-4">
-
-          <!-- Step 1 -->
-          <div class="reveal px-8 py-10 relative overflow-hidden">
-            <div
-              class="font-display text-[120px] leading-none text-white/5 absolute -top-2 -left-2 select-none pointer-events-none">
-              01</div>
-            <div class="relative z-10">
-              <div class="font-display text-5xl text-[#8B1A1A] mb-6">01</div>
-              <h3 class="text-white font-semibold text-lg mb-3">Licitación</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Participamos en concursos públicos aportando toda la
-                documentación técnica, económica y de solvencia que exige el pliego de condiciones.</p>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="reveal reveal-delay-1 px-8 py-10 relative overflow-hidden">
-            <div
-              class="font-display text-[120px] leading-none text-white/5 absolute -top-2 -left-2 select-none pointer-events-none">
-              02</div>
-            <div class="relative z-10">
-              <div class="font-display text-5xl text-[#8B1A1A] mb-6">02</div>
-              <h3 class="text-white font-semibold text-lg mb-3">Proyecto técnico</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Elaboramos o revisamos el proyecto de instalaciones,
-                coordinándonos con la dirección facultativa y adaptándonos a la normativa vigente.</p>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="reveal reveal-delay-2 px-8 py-10 relative overflow-hidden">
-            <div
-              class="font-display text-[120px] leading-none text-white/5 absolute -top-2 -left-2 select-none pointer-events-none">
-              03</div>
-            <div class="relative z-10">
-              <div class="font-display text-5xl text-[#8B1A1A] mb-6">03</div>
-              <h3 class="text-white font-semibold text-lg mb-3">Ejecución</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Equipo propio en obra, con seguimiento continuo de
-                calidad,
-                seguridad y plazos. Coordinación con el resto de gremios y la propiedad.</p>
-            </div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="reveal reveal-delay-3 px-8 py-10 relative overflow-hidden">
-            <div
-              class="font-display text-[120px] leading-none text-white/5 absolute -top-2 -left-2 select-none pointer-events-none">
-              04</div>
-            <div class="relative z-10">
-              <div class="font-display text-5xl text-[#8B1A1A] mb-6">04</div>
-              <h3 class="text-white font-semibold text-lg mb-3">Recepción de obra</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Legalización de instalaciones ante los organismos
-                competentes, entrega de certificados y documentación as-built al organismo contratante.</p>
-            </div>
+        <div class="card-list-item">
+          <span class="icon"><i class="fas fa-flag"></i></span>
+          <div>
+            <strong>Gestión y Metodología</strong>
+            <small>Scrum Master y Product Owner certificado. Estimación, planificación y seguimiento en proyectos de hasta 15 personas.</small>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Wave divider: dark proceso → red certificaciones (Wave A) -->
-    <div class="relative h-12 bg-[#8B1A1A]">
-      <svg class="absolute -top-1 left-0 w-full" viewBox="0 0 1440 48" preserveAspectRatio="none" fill="#1a1a1a">
-        <path d="M0,0 L1440,0 L1440,24 C1080,0 360,48 0,24 Z" />
-      </svg>
-    </div>
+    <!-- HABILIDADES Y TECNOLOGÍAS -->
+    <section>
+      <h2>Habilidades y Tecnologías</h2>
 
-    <!-- ══════════════════════════════════════════════════════════
-         PROYECTOS
-         ══════════════════════════════════════════════════════════ -->
-    <!--
-    <section id="proyectos" class="py-20 md:py-24 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-
-        <!-- Header
-    <div class="text-center mb-12">
-      <span class="section-badge">Portfolio</span>
-      <h2 class="reveal font-display text-5xl md:text-6xl text-brand-dark mb-4">PROYECTOS REALIZADOS</h2>
-      <p class="text-brand-muted text-base max-w-xl mx-auto leading-relaxed">
-        Más de tres décadas de proyectos completados con éxito en todo el territorio nacional.
-      </p>
-    </div>
-
-    <!-- Filtros
-    <div class="flex flex-wrap justify-center gap-3 mb-10" role="group" aria-label="Filtrar proyectos">
-      <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="educativo">Educativo</button>
-      <button class="filter-btn" data-filter="industrial">Industrial</button>
-      <button class="filter-btn" data-filter="sanitario">Sanitario</button>
-      <button class="filter-btn" data-filter="residencial">Residencial</button>
-    </div>
-
-    <!-- Grid de proyectos — masonry layout 
-    <div class="masonry-grid">
-
-      <!-- Proyecto 1 — Educativo (span 2 cols) 
-      <article class="project-card reveal reveal-delay-1 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="educativo">
-        <!-- TODO: reemplazar src con la foto real del proyecto CEIP San Gregorio 
-        <img src="https://images.unsplash.com/photo-1590579491624-f98f36d4c763?w=1200&h=400&fit=crop&q=80"
-          alt="Edificio escolar moderno — CEIP San Gregorio" class="absolute inset-0 w-full h-full object-cover block"
-          loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Educativo</span>
-          <h3 class="text-white font-semibold text-base leading-snug">CEIP San Gregorio</h3>
+      <div class="tech-section">
+        <h4>Lenguajes</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">C#</span>
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">C++</span>
+          <span class="tech-tag">Matlab</span>
         </div>
-      </article>
+      </div>
 
-      <!-- Proyecto 2 — Educativo 
-      <article class="project-card reveal reveal-delay-2 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="educativo">
-        <!-- TODO: reemplazar src con la foto real del proyecto Colegio El Molar 
-        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop&crop=entropy&q=80"
-          alt="Interior de aula — Colegio El Molar" class="absolute inset-0 w-full h-full object-cover block"
-          loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Educativo</span>
-          <h3 class="text-white font-semibold text-base leading-snug">Colegio El Molar</h3>
+      <div class="tech-section">
+        <h4>Frameworks</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">.NET Core</span>
+          <span class="tech-tag">.NET MVC5</span>
+          <span class="tech-tag">Entity Framework</span>
+          <span class="tech-tag">Bootstrap</span>
+          <span class="tech-tag">Swagger</span>
+          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">Hibernate</span>
+          <span class="tech-tag">Struts 2</span>
         </div>
-      </article>
+      </div>
 
-      <!-- Proyecto 3 — Educativo (span 2 rows)
-      <article class="project-card reveal reveal-delay-3 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="educativo">
-        <!-- TODO: reemplazar src con la foto real del proyecto Piscina Municipal 
-        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=800&fit=crop&q=80"
-          alt="Equipo técnico supervisando obra de construcción — Piscina Municipal"
-          class="absolute inset-0 w-full h-full object-cover block" loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Educativo</span>
-          <h3 class="text-white font-semibold text-base leading-snug">Piscina Municipal</h3>
+      <div class="tech-section">
+        <h4>Datos</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">CosmosDB</span>
+          <span class="tech-tag">Snowflake</span>
+          <span class="tech-tag">DataLake</span>
+          <span class="tech-tag">Data Factory</span>
         </div>
-      </article>
+      </div>
 
-      <!-- Proyecto 4 — Sanitario 
-      <article class="project-card reveal reveal-delay-1 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="sanitario">
-        <!-- TODO: reemplazar src con la foto real del proyecto Instalación TAC 
-        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=400&fit=crop&q=80"
-          alt="Quirófano con equipo médico — Instalación TAC" class="absolute inset-0 w-full h-full object-cover block"
-          loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Sanitario</span>
-          <h3 class="text-white font-semibold text-base leading-snug">Instalación TAC</h3>
+      <div class="tech-section">
+        <h4>Azure Cloud</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Azure DevOps</span>
+          <span class="tech-tag">Azure Pipelines</span>
+          <span class="tech-tag">Azure Functions</span>
+          <span class="tech-tag">Service Bus</span>
+          <span class="tech-tag">Azure Queues</span>
+          <span class="tech-tag">Azure Tables</span>
+          <span class="tech-tag">API Management</span>
+          <span class="tech-tag">Logic Apps</span>
+          <span class="tech-tag">EventGrid</span>
+          <span class="tech-tag">IoT Hub</span>
+          <span class="tech-tag">IoT Edge</span>
+          <span class="tech-tag">IoT Digital Twin</span>
         </div>
-      </article>
+      </div>
 
-      <!-- Proyecto 5 — Sanitario (span 2 cols) 
-      <article class="project-card reveal reveal-delay-2 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="sanitario">
-        <!-- TODO: reemplazar src con la foto real del proyecto Sala de Quirófanos 
-        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1200&h=400&fit=crop&q=80"
-          alt="Edificio hospitalario moderno — Sala de Quirófanos"
-          class="absolute inset-0 w-full h-full object-cover block" loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Sanitario</span>
-          <h3 class="text-white font-semibold text-base leading-snug">Sala de Quirófanos</h3>
-        </div>
-      </article>
-
-      <!-- Proyecto 6 — Industrial 
-      <article class="project-card reveal reveal-delay-3 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="industrial">
-        <!-- TODO: reemplazar src con la foto real del proyecto Teatro 
-        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=400&fit=crop&q=80"
-          alt="Nave industrial con instalaciones de almacenamiento — Teatro"
-          class="absolute inset-0 w-full h-full object-cover block" loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Industrial</span>
-          <h3 class="text-white font-semibold text-base leading-snug">Teatro</h3>
-        </div>
-      </article>
-
-      <!-- Proyecto 7 — Industrial 
-      <article class="project-card reveal reveal-delay-1 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="industrial">
-        <!-- TODO: reemplazar src con la foto real del proyecto Cancha Deportiva 
-        <img src="https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?w=600&h=400&fit=crop&q=80"
-          alt="Grúas de construcción al atardecer — Cancha Deportiva"
-          class="absolute inset-0 w-full h-full object-cover block" loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Industrial</span>
-          <h3 class="text-white font-semibold text-base leading-snug">Cancha Deportiva</h3>
-        </div>
-      </article>
-
-      <!-- Proyecto 8 — Residencial
-      <article class="project-card reveal reveal-delay-2 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="residencial">
-        <!-- TODO: reemplazar src con la foto real del proyecto Rehabilitación Pedrezuela
-        <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=600&h=400&fit=crop&q=80"
-          alt="Vivienda unifamiliar rehabilitada — Pedrezuela" class="absolute inset-0 w-full h-full object-cover block"
-          loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Residencial</span>
-          <h3 class="text-white font-semibold text-base leading-snug">Rehabilitación Pedrezuela</h3>
-        </div>
-      </article>
-
-      <!-- Proyecto 9 — Residencial
-      <article class="project-card reveal reveal-delay-3 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="residencial">
-        <!-- TODO: reemplazar src con la foto real del proyecto Urbanización Ronda I 
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop&crop=entropy&q=80"
-          alt="Bloque residencial urbanización — Ronda I" class="absolute inset-0 w-full h-full object-cover block"
-          loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Residencial</span>
-          <h3 class="text-white font-semibold text-base leading-snug">Urbanización Ronda I</h3>
-        </div>
-      </article>
-
-      <!-- Proyecto 10 — Residencial 
-      <article class="project-card reveal reveal-delay-1 rounded-lg overflow-hidden relative group h-full w-full"
-        data-category="residencial">
-        <!-- TODO: reemplazar src con la foto real del proyecto Urbanización Ronda II 
-        <img src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=600&h=400&fit=crop&q=80"
-          alt="Edificios residenciales en ciudad — Urbanización Ronda II"
-          class="absolute inset-0 w-full h-full object-cover block" loading="lazy">
-        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-5">
-          <span
-            class="inline-block text-xs font-semibold uppercase tracking-wider text-white/80 bg-white/20 px-2 py-1 rounded-full w-fit mb-2">Residencial</span>
-          <h3 class="text-white font-semibold text-base leading-snug">Urbanización Ronda II</h3>
-        </div>
-      </article>
-
-    </div>
-    </div>
-    </section>
-    -->
-
-    <!-- ══════════════════════════════════════════════════════════
-         CERTIFICACIONES
-         ══════════════════════════════════════════════════════════ -->
-    <section id="certificaciones" class="py-20 md:py-24 bg-primary text-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-          <!-- Left: editorial typography -->
-          <div class="reveal">
-            <p class="text-white/40 font-semibold text-xs tracking-[0.2em] uppercase mb-6">Auditadas externamente</p>
-            <h2 class="font-display text-5xl md:text-6xl mb-8">CALIDAD QUE<br>SE DEMUESTRA</h2>
-            <p class="text-white/70 text-base leading-relaxed max-w-md">
-              Tres certificaciones internacionales renovadas cada año con auditorías externas independientes. Requisito
-              habitual en licitaciones de obra pública.
-            </p>
-          </div>
-
-          <!-- Right: ISO badges vertical stack -->
-          <div class="flex flex-col gap-4">
-
-            <div
-              class="reveal reveal-delay-1 flex items-center gap-6 bg-white/10 border border-white/10 rounded-2xl px-8 py-6 hover:bg-white/15 transition-colors duration-200">
-              <span class="font-display text-4xl text-white">9001</span>
-              <div class="w-px h-10 bg-white/20 flex-shrink-0"></div>
-              <div>
-                <p class="text-white font-semibold text-sm">ISO 9001</p>
-                <p class="text-white/50 text-xs mt-0.5">Sistema de Gestión de la Calidad</p>
-              </div>
-            </div>
-
-            <div
-              class="reveal reveal-delay-2 flex items-center gap-6 bg-white/10 border border-white/10 rounded-2xl px-8 py-6 hover:bg-white/15 transition-colors duration-200">
-              <span class="font-display text-4xl text-white">14001</span>
-              <div class="w-px h-10 bg-white/20 flex-shrink-0"></div>
-              <div>
-                <p class="text-white font-semibold text-sm">ISO 14001</p>
-                <p class="text-white/50 text-xs mt-0.5">Sistema de Gestión Medioambiental</p>
-              </div>
-            </div>
-
-            <div
-              class="reveal reveal-delay-3 flex items-center gap-6 bg-white/10 border border-white/10 rounded-2xl px-8 py-6 hover:bg-white/15 transition-colors duration-200">
-              <span class="font-display text-4xl text-white">27001</span>
-              <div class="w-px h-10 bg-white/20 flex-shrink-0"></div>
-              <div>
-                <p class="text-white font-semibold text-sm">ISO 27001</p>
-                <p class="text-white/50 text-xs mt-0.5">Sistema de Gestión de Seguridad de la Información</p>
-              </div>
-            </div>
-
-          </div>
+      <div class="tech-section">
+        <h4>Integraciones y Herramientas</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Workato Automation</span>
+          <span class="tech-tag">Web API (REST/SOAP)</span>
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">Docker</span>
         </div>
       </div>
     </section>
 
-    <!-- Wave divider: red certificaciones → white contacto (Wave B) -->
-    <div class="relative h-12 bg-white">
-      <svg class="absolute -top-1 left-0 w-full" viewBox="0 0 1440 48" preserveAspectRatio="none" fill="#8B1A1A">
-        <path d="M0,0 L1440,0 L1440,24 C1080,48 360,0 0,24 Z" />
-      </svg>
-    </div>
+    <!-- IDIOMAS -->
+    <section>
+      <h2>Idiomas</h2>
+      <ul class="lang-list">
+        <li>Español <span class="lang-level">Nativo</span></li>
+        <li>Inglés <span class="lang-level">B2 - Intermedio</span></li>
+      </ul>
+    </section>
 
-    <!-- ══════════════════════════════════════════════════════════
-         CONTACTO
-         ══════════════════════════════════════════════════════════ -->
-    <section id="contacto" class="py-20 md:py-24 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
+    <!-- EXPERIENCIA + FORMACIÓN -->
+    <section id="experiencia">
+      <h2>Experiencia &amp; Formación</h2>
 
-        <!-- Header -->
-        <div class="text-center mb-16">
-          <span class="section-badge">Hablemos</span>
-          <h2 class="font-display text-5xl md:text-6xl text-brand-dark mb-4">¿TIENES UN PROYECTO?</h2>
-          <p class="text-brand-muted text-base max-w-xl mx-auto leading-relaxed">
-            Cuéntanos qué necesitas. Primera consulta sin compromiso — te respondemos en menos de 24 horas.
-          </p>
-        </div>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="experiencia">Experiencia Profesional</button>
+        <button class="tab-btn" data-tab="formacion">Formación</button>
+      </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-          <!-- CTAs de contacto directo -->
-          <div class="bg-brand-dark rounded-2xl p-8 md:p-10 flex flex-col justify-between">
-            <div>
-              <h3 class="font-display text-3xl text-white mb-3">Contacto directo</h3>
-              <p class="text-white/60 text-sm leading-relaxed mb-8">
-                La forma más rápida de hablar con nosotros es por teléfono o email. Sin intermediarios, sin esperas.
-              </p>
-            </div>
-
-            <div class="flex flex-col gap-4">
-              <!-- Teléfono -->
-              <a href="tel:+34913324770"
-                class="flex items-center gap-4 bg-primary hover:bg-primary-dark text-white rounded-full px-6 py-4 transition-colors duration-200 group">
-                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
-                </svg>
-                <div>
-                  <p class="text-xs text-white/60 leading-none mb-0.5">Llámanos</p>
-                  <p class="text-sm font-semibold">91 332 47 70</p>
-                </div>
-                <svg class="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" fill="none"
-                  stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-
-              <!-- Email -->
-              <a href="mailto:obras@decon86.net"
-                class="flex items-center gap-4 bg-white/10 hover:bg-white/20 text-white rounded-full px-6 py-4 transition-colors duration-200 group border border-white/10">
-                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <div>
-                  <p class="text-xs text-white/60 leading-none mb-0.5">Escríbenos</p>
-                  <p class="text-sm font-semibold">obras@decon86.net</p>
-                </div>
-                <svg class="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" fill="none"
-                  stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-
-            </div>
+      <!-- TAB: EXPERIENCIA -->
+      <div class="tab-panel active" id="tab-experiencia">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-period">2024 - Actualidad</div>
+            <div class="timeline-company">BIP X-Tech</div>
+            <div class="timeline-title">XTech Expert</div>
+            <div class="timeline-desc">Arquitectura y consultoría Cloud para clientes de distintos sectores, con foco en Azure y soluciones de integración a medida.</div>
           </div>
-
-          <!-- Mapa + Info -->
-          <div class="flex flex-col gap-8">
-
-            <!-- Datos de contacto -->
-            <div class="flex flex-col gap-3">
-              <!-- Card destacada — Dirección -->
-              <div class="bg-[#f8f9fa] rounded-2xl px-6 py-5">
-                <p class="text-xs uppercase tracking-[0.2em] text-brand-muted mb-2">Dirección</p>
-                <p class="text-brand-dark font-semibold text-base leading-snug">Av. de Santa Eugenia, 12<br>28031 Madrid
-                </p>
-              </div>
-              <!-- Cards secundarias -->
-              <div class="grid grid-cols-2 gap-3">
-                <a href="tel:+34913324770"
-                  class="bg-[#f8f9fa] rounded-2xl px-6 py-5 hover:bg-gray-100 transition-colors duration-200">
-                  <p class="text-xs uppercase tracking-[0.2em] text-brand-muted mb-2">Teléfono</p>
-                  <p class="text-brand-dark font-semibold text-base">91 332 47 70</p>
-                </a>
-                <a href="mailto:obras@decon86.net"
-                  class="bg-[#f8f9fa] rounded-2xl px-6 py-5 hover:bg-gray-100 transition-colors duration-200">
-                  <p class="text-xs uppercase tracking-[0.2em] text-brand-muted mb-2">Email</p>
-                  <p class="text-brand-dark font-semibold text-sm break-all">obras@decon86.net</p>
-                </a>
-              </div>
-            </div>
-
-            <!-- Google Maps embed — Av. Santa Eugenia 12, Madrid -->
-            <div class="rounded-xl overflow-hidden border border-gray-200 flex-1 min-h-[240px]">
-              <iframe title="Ubicación Decon 86 — Av. de Santa Eugenia 12, Madrid"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.262847297053!2d-3.6447985!3d40.4001975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227b7d2a2dfe3%3A0x7e5f29e1f8c2b1a!2sAv.%20de%20Santa%20Eugenia%2C%2012%2C%2028031%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000"
-                width="100%" height="100%" style="border:0; min-height: 240px;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-
+          <div class="timeline-item">
+            <div class="timeline-period">2023 - 2024</div>
+            <div class="timeline-company">Sportian by Globant &amp; La Liga Tech</div>
+            <div class="timeline-title">Technical Lead</div>
+            <div class="timeline-desc">Technical Lead en proyectos de alta visibilidad para La Liga Tech. Punto de contacto entre negocio y desarrollo, con responsabilidad directa sobre decisiones de arquitectura.<br><strong>*Más información en CV descargable.</strong></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2023</div>
+            <div class="timeline-company">Avanade Spain</div>
+            <div class="timeline-title">Consultor Senior</div>
+            <div class="timeline-desc">Consultoría senior en proyectos Microsoft para grandes cuentas. Decisiones de arquitectura, liderazgo técnico y coordinación de equipo bajo demanda.<br><strong>*Más información en CV descargable.</strong></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2021 - 2022</div>
+            <div class="timeline-company">Kabel Sistemas de Información</div>
+            <div class="timeline-title">Consultor Senior de Datos e Integración</div>
+            <div class="timeline-desc">Definición y desarrollo de arquitecturas Cloud para integración, transformación y enriquecimiento de datos. Gestión técnica de proyectos.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2020 - 2021</div>
+            <div class="timeline-company">Viseo Spain</div>
+            <div class="timeline-title">Senior Teamlead</div>
+            <div class="timeline-desc">Responsabilidades técnicas ampliadas: arquitectura, previsiones de escalabilidad, control de gasto cloud y cuadros de mando.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2019 - 2020</div>
+            <div class="timeline-company">Viseo Spain</div>
+            <div class="timeline-title">Teamlead y Consultor</div>
+            <div class="timeline-desc">Primer rol de liderazgo técnico: coordinación del equipo, planificación de sprints y captura directa de requisitos con cliente.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2017 - 2019</div>
+            <div class="timeline-company">The Birchman Group</div>
+            <div class="timeline-title">Consultor Junior</div>
+            <div class="timeline-desc">Análisis y desarrollo de funcionalidades en proyectos para Iberia Express y Bergé-Gefco Logistics. Resolución de bugs y soporte.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2015 - 2017</div>
+            <div class="timeline-company">Independiente</div>
+            <div class="timeline-title">Desarrollador Web a Medida</div>
+            <div class="timeline-desc">Desarrollo de páginas web a medida del cliente y asesoramiento para mostrar la mejor versión de su negocio.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2015 - 2016</div>
+            <div class="timeline-company">Efika Market</div>
+            <div class="timeline-title">Becario Desarrollador</div>
+            <div class="timeline-desc">Desarrollo web: aplicaciones de captación de datos, mantenimiento de sistemas y páginas web corporativas.</div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ══════════════════════════════════════════════════════════
-         TRABAJA CON NOSOTROS
-         ══════════════════════════════════════════════════════════ -->
-    <section id="empleo" class="py-20 md:py-24 bg-[#f8f9fa]">
-      <div class="max-w-6xl mx-auto px-6">
+      <!-- TAB: FORMACIÓN -->
+      <div class="tab-panel" id="tab-formacion">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-period">2022</div>
+            <div class="timeline-company">Certificación oficial</div>
+            <div class="timeline-title">Workato Automation PRO I, II y III</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2020</div>
+            <div class="timeline-company">IMF Business School</div>
+            <div class="timeline-title">Máster en Gestión y Dirección de Proyectos</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2019</div>
+            <div class="timeline-company">devAcademy</div>
+            <div class="timeline-title">Curso de Arquitectura de Microservicios</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2018</div>
+            <div class="timeline-company">europeanScrum.org</div>
+            <div class="timeline-title">Scrum Master</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2018</div>
+            <div class="timeline-company">JavierGarzas.es</div>
+            <div class="timeline-title">Product Owner</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2012 - 2017</div>
+            <div class="timeline-company">Universidad Francisco de Vitoria, Madrid</div>
+            <div class="timeline-title">Grado en Ingeniería Informática</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2012 - 2016</div>
+            <div class="timeline-company">Universidad Francisco de Vitoria, Madrid</div>
+            <div class="timeline-title">Título de Experto en Robótica</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2016</div>
+            <div class="timeline-company">Universidad Francisco de Vitoria, Madrid</div>
+            <div class="timeline-title">Curso de Informática Forense</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2012</div>
+            <div class="timeline-company">Pixelpro.es</div>
+            <div class="timeline-title">Desarrollo de Aplicaciones Android</div>
+          </div>
+        </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-          <!-- Left: copy -->
-          <div class="reveal">
-            <span class="section-badge">Únete al equipo</span>
-            <h2 class="font-display text-5xl md:text-6xl text-brand-dark mb-6">TRABAJA<br>CON NOSOTROS</h2>
-            <p class="text-brand-muted text-base leading-relaxed mb-8">
-              Somos un equipo estable con más de 40 años de actividad. Buscamos profesionales comprometidos con el
-              trabajo bien hecho, para incorporarse a proyectos de obra pública en toda España.
-            </p>
-
-            <!-- Perfiles buscados -->
-            <div class="space-y-4">
-              <p class="text-sm font-semibold text-brand-dark uppercase tracking-wider mb-3">Perfiles habituales</p>
-
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                <div>
-                  <p class="text-sm font-semibold text-brand-dark">Oficiales y ayudantes de albañilería</p>
-                  <p class="text-xs text-brand-muted">Ejecución de obra civil y trabajos de construcción</p>
-                </div>
+        <div class="accordion">
+          <button class="accordion-btn" aria-expanded="false">
+            Formación No Acreditada
+            <i class="fas fa-chevron-down chevron"></i>
+          </button>
+          <div class="accordion-panel" role="region">
+            <div class="card-list">
+              <div class="card-list-item">
+                <span class="icon"><i class="fas fa-tools"></i></span>
+                Reparación de sistemas informáticos
               </div>
-
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                <div>
-                  <p class="text-sm font-semibold text-brand-dark">Oficiales y ayudantes electricistas</p>
-                  <p class="text-xs text-brand-muted">Instalaciones eléctricas en baja y media tensión</p>
-                </div>
+              <div class="card-list-item">
+                <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                Profesor particular en Universidad Francisco de Vitoria, Madrid
               </div>
-
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                <div>
-                  <p class="text-sm font-semibold text-brand-dark">Arquitecto técnico e ingenieros</p>
-                  <p class="text-xs text-brand-muted">Dirección y supervisión técnica de obras e instalaciones</p>
-                </div>
+              <div class="card-list-item">
+                <span class="icon"><i class="fab fa-apple"></i></span>
+                Desarrollo de aplicaciones para iOS con Swift 3 (Udemy)
               </div>
-
-
+              <div class="card-list-item">
+                <span class="icon"><i class="fab fa-angular"></i></span>
+                Desarrollo en Angular 2 y Node.js (Udemy)
+              </div>
+              <div class="card-list-item">
+                <span class="icon"><i class="fab fa-microsoft"></i></span>
+                Desarrollo ASP.NET MVC completo (Udemy)
+              </div>
+              <div class="card-list-item">
+                <span class="icon"><i class="fas fa-user-secret"></i></span>
+                Hacking ético (Udemy)
+              </div>
+              <div class="card-list-item">
+                <span class="icon"><i class="fas fa-people-group"></i></span>
+                Animador y organizador de eventos
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- Right: CTA card -->
-          <div class="reveal reveal-delay-1">
-            <div class="bg-brand-dark rounded-2xl p-8 md:p-10">
-              <h3 class="font-display text-3xl text-white mb-3">¿Te interesa?</h3>
-              <p class="text-white/60 text-sm leading-relaxed mb-8">
-                Envíanos tu CV a nuestra dirección de email. Revisamos todas las candidaturas y contactamos cuando
-                surgen vacantes que encajan con tu perfil.
-              </p>
-
-              <!-- Email CTA -->
-              <a href="mailto:obras@decon86.net?subject=Candidatura%20espontánea"
-                class="flex items-center gap-3 bg-primary hover:bg-primary-dark text-white rounded-full px-6 py-4 transition-colors duration-200 mb-6 group">
-                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span class="text-sm font-semibold">obras@decon86.net</span>
-                <svg class="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" fill="none"
-                  stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-
-              <div class="border-t border-white/10 pt-6">
-                <p class="text-white/40 text-xs leading-relaxed">
-                  Indica en el asunto el puesto al que te postulas. Incluye tu CV actualizado y cualquier certificación
-                  o
-                  titulación relevante.
-                </p>
+        <div class="accordion">
+          <button class="accordion-btn" aria-expanded="false">
+            Otros datos
+            <i class="fas fa-chevron-down chevron"></i>
+          </button>
+          <div class="accordion-panel" role="region">
+            <div class="card-list">
+              <div class="card-list-item">
+                <span class="icon"><i class="fas fa-car"></i></span>
+                Carnet de conducir y vehículo propio
+              </div>
+              <div class="card-list-item">
+                <span class="icon"><i class="fas fa-plane-departure"></i></span>
+                Disponibilidad para viajar
+              </div>
+              <div class="card-list-item">
+                <span class="icon"><i class="fas fa-hands-helping"></i></span>
+                Voluntario en la fundación Hontanar de ayuda a la drogadicción (8 meses)
+              </div>
+              <div class="card-list-item">
+                <span class="icon"><i class="fas fa-person-walking"></i></span>
+                Practicante de artes marciales desde los 6 años
               </div>
             </div>
           </div>
-
         </div>
       </div>
+
     </section>
 
+    <div class="copyrights">© 2025 Antonio Junquera Criado. Todos los derechos reservados.</div>
   </main>
 
-  <!-- Wave divider: light empleo → dark footer (Wave B) -->
-  <div class="relative h-12 bg-[#1a1a1a]">
-    <svg class="absolute -top-1 left-0 w-full" viewBox="0 0 1440 48" preserveAspectRatio="none" fill="#f8f9fa">
-      <path d="M0,0 L1440,0 L1440,24 C1080,48 360,0 0,24 Z" />
-    </svg>
-  </div>
+  <script>
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
 
-  <!-- ══════════════════════════════════════════════════════════
-       FOOTER
-       ══════════════════════════════════════════════════════════ -->
-  <footer class="bg-[#1a1a1a]" role="contentinfo">
+    // Accordion
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const panel = btn.nextElementSibling;
+        const isOpen = panel.classList.contains('open');
+        panel.classList.toggle('open', !isOpen);
+        btn.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
 
-    <!-- Grid -->
-    <div class="max-w-6xl mx-auto px-6 py-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          revealObserver.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    );
 
-        <!-- Col 1 — Logo + descripción -->
-        <div>
-          <a href="#inicio" class="inline-block mb-5">
-            <img src="img/logo.png" alt="Decon 86" class="h-8 w-auto logo-blend">
-          </a>
-          <p class="text-white/40 text-sm leading-relaxed mb-5">
-            Instalaciones eléctricas y telecomunicaciones en toda España desde 1986.
-          </p>
-          <div class="flex gap-2 flex-wrap">
-            <span class="text-xs font-semibold text-white/40 border border-white/20 rounded-full px-3 py-1">ISO
-              9001</span>
-            <span class="text-xs font-semibold text-white/40 border border-white/20 rounded-full px-3 py-1">ISO
-              14001</span>
-            <span class="text-xs font-semibold text-white/40 border border-white/20 rounded-full px-3 py-1">ISO
-              27001</span>
-          </div>
-        </div>
+    document.querySelectorAll('section').forEach(el => {
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    });
 
-        <!-- Col 2 — Contacto -->
-        <div>
-          <h3 class="text-xs uppercase tracking-[0.2em] text-white/30 mb-5">Contacto</h3>
-          <ul class="flex flex-col gap-3 text-sm text-white/50">
-            <li>Av. de Santa Eugenia, 12, 28031 Madrid</li>
-            <li><a href="tel:+34913324770" class="hover:text-white transition-colors duration-200">91 332 47 70</a></li>
-            <li><a href="mailto:obras@decon86.net"
-                class="hover:text-white transition-colors duration-200">obras@decon86.net</a></li>
-          </ul>
-        </div>
+    document.querySelectorAll('.card-list-item').forEach(el => {
+      const siblings = Array.from(el.parentElement.querySelectorAll('.card-list-item'));
+      el.classList.add('reveal');
+      el.style.transitionDelay = siblings.indexOf(el) * 0.07 + 's';
+      revealObserver.observe(el);
+    });
 
-      </div>
-    </div>
+    document.querySelectorAll('.timeline-item').forEach(el => {
+      const siblings = Array.from(el.parentElement.querySelectorAll('.timeline-item'));
+      el.classList.add('reveal');
+      el.style.transitionDelay = siblings.indexOf(el) * 0.06 + 's';
+      revealObserver.observe(el);
+    });
 
-    <!-- Copyright bar -->
-    <div class="border-t border-white/10">
-      <div
-        class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-center gap-2 text-xs text-white/30">
-        <p>&copy; <span id="copyright-year"></span> Decon 86, S.A. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
+    document.querySelectorAll('.tech-section').forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = i * 0.08 + 's';
+      revealObserver.observe(el);
+    });
 
-  <!-- Back to top -->
-  <button id="back-to-top"
-    class="hidden fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-primary text-white shadow-lg flex items-center justify-center hover:bg-primary-dark transition-colors duration-200 focus:outline-none"
-    aria-label="Volver al inicio">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-    </svg>
-  </button>
+    // Clear hash on load and restore from top
+    history.scrollRestoration = 'manual';
+    if (window.location.hash) history.replaceState(null, '', window.location.pathname);
+    window.scrollTo(0, 0);
 
-  <!-- Floating Call Button (mobile) -->
-  <a href="tel:+34913324770"
-    class="floating-call-btn fixed bottom-6 right-6 z-50 md:hidden flex items-center justify-center w-14 h-14 rounded-full shadow-lg"
-    style="background:#8B1A1A" aria-label="Llamar a Deconsa 86">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"
-      stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round"
-        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
-    </svg>
-  </a>
+    // Smooth scroll — todos los navs, sin tocar la URL
+    document.querySelectorAll('.header-nav-new a, .sticky-nav-links a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
 
-  <!-- Main JS -->
-  <script src="js/main.js"></script>
+    // Sticky nav — aparece al salir del header
+    const stickyNav = document.querySelector('.sticky-nav');
+    const headerEl = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      stickyNav.classList.toggle('visible', window.scrollY > headerEl.offsetHeight - 40);
+    }, { passive: true });
+
+    // Scroll spy — sincroniza ambos navs
+    const allNavLinks = document.querySelectorAll('.header-nav-new a, .sticky-nav-links a');
+    const sections = document.querySelectorAll('section[id]');
+    const scrollSpy = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          allNavLinks.forEach(a => a.classList.remove('active'));
+          document.querySelectorAll(`a[href="#${e.target.id}"]`).forEach(a => a.classList.add('active'));
+        }
+      }),
+      { threshold: 0.35 }
+    );
+    sections.forEach(s => scrollSpy.observe(s));
+  </script>
 </body>
-
 </html>
