@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Antonio Junquera Criado · Cloud Architect &amp; Technical Lead</title>
+  <title data-i18n="meta.title">Antonio Junquera Criado · Cloud Architect &amp; Technical Lead</title>
   <meta name="description" content="CV online de Antonio Junquera Criado, Cloud Architect y Technical Lead con más de 10 años de experiencia en ecosistema Microsoft y Azure." />
   <meta name="keywords" content="CV, Antonio Junquera, Cloud Architect, Technical Lead, Azure, .NET, Resume, Portfolio" />
   <meta name="author" content="Antonio Junquera" />
@@ -130,6 +130,46 @@
       border-color: #1de9b6;
       color: #fff;
     }
+
+    /* ── LANGUAGE TOGGLE ─────────────────────── */
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 1rem;
+      line-height: 1;
+      cursor: pointer;
+      opacity: 0.55;
+      transition: opacity 0.2s, background 0.2s, transform 0.15s;
+      font-family: inherit;
+      color: inherit;
+    }
+    .lang-btn:hover { opacity: 0.9; }
+    .lang-btn:focus-visible {
+      outline: 2px solid #1de9b6;
+      outline-offset: 2px;
+    }
+    .lang-btn.is-active {
+      opacity: 1;
+      background: rgba(29, 233, 182, 0.18);
+      transform: scale(1.05);
+    }
+
+    /* Hide toggle in print (parent .header-actions-new is already hidden, this is belt-and-suspenders) */
+    @media print {
+      .lang-toggle { display: none !important; }
+    }
+
     @media (max-width: 800px) {
       .header-content {
         flex-direction: column;
@@ -448,7 +488,9 @@
     }
     .header-top {
       display: flex;
+      align-items: center;
       justify-content: flex-end;
+      gap: 20px;
       padding: 22px 0 0;
     }
     .header-nav-new {
@@ -672,24 +714,32 @@
 </head>
 
 <body>
-  <header role="banner" aria-label="Cabecera principal">
+  <header role="banner" data-i18n-aria="aria.header" aria-label="Cabecera principal">
     <div class="header-inner">
       <div class="header-top">
-        <nav class="header-nav-new" aria-label="Menú principal">
-          <a href="#sobre-mi" class="active">Sobre mí</a>
-          <a href="#experiencia">Experiencia</a>
+        <nav class="header-nav-new" data-i18n-aria="aria.nav_main" aria-label="Menú principal">
+          <a href="#sobre-mi" class="active" data-i18n="nav.about">Sobre mí</a>
+          <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
         </nav>
+        <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+          <button type="button" class="lang-btn" data-lang="es" aria-pressed="true" aria-label="Cambiar a español">
+            <span aria-hidden="true">🇪🇸</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="Switch to English">
+            <span aria-hidden="true">🇬🇧</span>
+          </button>
+        </div>
       </div>
       <div class="header-body">
         <div class="header-left">
-          <span class="header-eyebrow">Cloud Architect &amp; Technical Lead</span>
-          <h1 class="header-name-new">Antonio<br>Junquera<br>Criado</h1>
+          <span class="header-eyebrow" data-i18n="header.eyebrow">Cloud Architect &amp; Technical Lead</span>
+          <h1 class="header-name-new" data-i18n-html="header.name_html">Antonio<br>Junquera<br>Criado</h1>
           <div class="header-actions-new">
             <div class="social-links-new">
               <a href="https://www.linkedin.com/in/antonio-junquera-criado-41988910a/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
-            <a href="CV_AJC.pdf" target="_blank" class="btn-cv" aria-label="Descargar CV">
-              <i class="fas fa-download"></i> Descargar CV
+            <a href="CV_AJC.pdf" target="_blank" class="btn-cv" data-i18n-aria="aria.download">
+              <i class="fas fa-download"></i> <span data-i18n="btn.download">Descargar CV</span>
             </a>
           </div>
         </div>
@@ -700,12 +750,12 @@
     </div>
   </header>
 
-  <div class="sticky-nav" role="navigation" aria-label="Navegación fija">
+  <div class="sticky-nav" role="navigation" data-i18n-aria="aria.nav_sticky" aria-label="Navegación fija">
     <div class="sticky-nav-inner">
       <span class="sticky-nav-name">Antonio Junquera</span>
       <div class="sticky-nav-links">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#experiencia">Experiencia</a>
+        <a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+        <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
       </div>
     </div>
   </div>
@@ -714,13 +764,13 @@
 
     <!-- SOBRE MÍ -->
     <section id="sobre-mi">
-      <h2>Sobre mí</h2>
+      <h2 data-i18n="section.about">Sobre mí</h2>
       <div class="about-wrapper">
         <div class="about-description">
-          <p>Ingeniero informático con más de 10 años de experiencia en desarrollo de software y arquitectura Cloud, con un fuerte componente de liderazgo técnico. He trabajado en entornos de alta exigencia (desde aerolíneas hasta tecnología deportiva) coordinando equipos, tomando decisiones de arquitectura y siendo el nexo entre negocio y técnica.</p>
-          <p>Mi especialización principal gira en torno al ecosistema Microsoft: .NET, Azure y la integración de sistemas complejos. Me muevo con igual comodidad en la pizarra diseñando una solución que en el código implementándola.</p>
-          <p>He coordinado equipos de hasta 15 personas en entornos donde el error tiene coste real. Para mí, la arquitectura no es un documento: es una decisión que alguien tiene que defender en producción.</p>
-          <blockquote style="margin-top:24px; color:#1de9b6; font-style: italic; border-left: 3px solid #1de9b6; padding-left: 14px; margin-left: 0;">
+          <p data-i18n="about.p1">Ingeniero informático con más de 10 años de experiencia en desarrollo de software y arquitectura Cloud, con un fuerte componente de liderazgo técnico. He trabajado en entornos de alta exigencia (desde aerolíneas hasta tecnología deportiva) coordinando equipos, tomando decisiones de arquitectura y siendo el nexo entre negocio y técnica.</p>
+          <p data-i18n="about.p2">Mi especialización principal gira en torno al ecosistema Microsoft: .NET, Azure y la integración de sistemas complejos. Me muevo con igual comodidad en la pizarra diseñando una solución que en el código implementándola.</p>
+          <p data-i18n="about.p3">He coordinado equipos de hasta 15 personas en entornos donde el error tiene coste real. Para mí, la arquitectura no es un documento: es una decisión que alguien tiene que defender en producción.</p>
+          <blockquote style="margin-top:24px; color:#1de9b6; font-style: italic; border-left: 3px solid #1de9b6; padding-left: 14px; margin-left: 0;" data-i18n="about.quote">
             "Hacer la mitad de algo es esencialmente, no hacer nada" · Jeff Sutherland
           </blockquote>
         </div>
@@ -729,34 +779,34 @@
 
     <!-- CAPACIDADES -->
     <section>
-      <h2>Capacidades</h2>
+      <h2 data-i18n="section.capabilities">Capacidades</h2>
       <div class="card-list">
         <div class="card-list-item">
           <span class="icon"><i class="fas fa-cloud"></i></span>
           <div>
-            <strong>Arquitectura Cloud</strong>
-            <small>Diseño de soluciones en Azure: integraciones, microservicios, pipelines de datos y arquitecturas event-driven. Con criterio de coste y escalabilidad.</small>
+            <strong data-i18n="cap.cloud.title">Arquitectura Cloud</strong>
+            <small data-i18n="cap.cloud.desc">Diseño de soluciones en Azure: integraciones, microservicios, pipelines de datos y arquitecturas event-driven. Con criterio de coste y escalabilidad.</small>
           </div>
         </div>
         <div class="card-list-item">
           <span class="icon"><i class="fas fa-people-group"></i></span>
           <div>
-            <strong>Liderazgo Técnico</strong>
-            <small>De los requisitos a producción: decisiones de arquitectura, coordinación de equipo y punto de contacto directo entre negocio y desarrollo.</small>
+            <strong data-i18n="cap.lead.title">Liderazgo Técnico</strong>
+            <small data-i18n="cap.lead.desc">De los requisitos a producción: decisiones de arquitectura, coordinación de equipo y punto de contacto directo entre negocio y desarrollo.</small>
           </div>
         </div>
         <div class="card-list-item">
           <span class="icon"><i class="fas fa-diagram-project"></i></span>
           <div>
-            <strong>Integración de Sistemas</strong>
-            <small>Diseño e implementación de flujos entre sistemas heterogéneos. APIs REST/SOAP, Service Bus, Logic Apps, Workato y Azure Functions.</small>
+            <strong data-i18n="cap.integration.title">Integración de Sistemas</strong>
+            <small data-i18n="cap.integration.desc">Diseño e implementación de flujos entre sistemas heterogéneos. APIs REST/SOAP, Service Bus, Logic Apps, Workato y Azure Functions.</small>
           </div>
         </div>
         <div class="card-list-item">
           <span class="icon"><i class="fas fa-flag"></i></span>
           <div>
-            <strong>Gestión y Metodología</strong>
-            <small>Scrum Master y Product Owner certificado. Estimación, planificación y seguimiento en proyectos de hasta 15 personas.</small>
+            <strong data-i18n="cap.methodology.title">Gestión y Metodología</strong>
+            <small data-i18n="cap.methodology.desc">Scrum Master y Product Owner certificado. Estimación, planificación y seguimiento en proyectos de hasta 15 personas.</small>
           </div>
         </div>
       </div>
@@ -764,10 +814,10 @@
 
     <!-- HABILIDADES Y TECNOLOGÍAS -->
     <section>
-      <h2>Habilidades y Tecnologías</h2>
+      <h2 data-i18n="section.skills">Habilidades y Tecnologías</h2>
 
       <div class="tech-section">
-        <h4>Lenguajes</h4>
+        <h4 data-i18n="tech.languages">Lenguajes</h4>
         <div class="tech-tags">
           <span class="tech-tag">C#</span>
           <span class="tech-tag">JavaScript</span>
@@ -775,7 +825,7 @@
       </div>
 
       <div class="tech-section">
-        <h4>Frameworks</h4>
+        <h4 data-i18n="tech.frameworks">Frameworks</h4>
         <div class="tech-tags">
           <span class="tech-tag">.NET</span>
           <span class="tech-tag">Entity Framework</span>
@@ -784,7 +834,7 @@
       </div>
 
       <div class="tech-section">
-        <h4>Datos</h4>
+        <h4 data-i18n="tech.data">Datos</h4>
         <div class="tech-tags">
           <span class="tech-tag">SQL</span>
           <span class="tech-tag">MongoDB</span>
@@ -796,7 +846,7 @@
       </div>
 
       <div class="tech-section">
-        <h4>Azure Cloud</h4>
+        <h4 data-i18n="tech.azure">Azure Cloud</h4>
         <div class="tech-tags">
           <span class="tech-tag">Azure Functions</span>
           <span class="tech-tag">Service Bus</span>
@@ -815,7 +865,7 @@
       </div>
 
       <div class="tech-section">
-        <h4>Integraciones y Herramientas</h4>
+        <h4 data-i18n="tech.integrations">Integraciones y Herramientas</h4>
         <div class="tech-tags">
           <span class="tech-tag">Workato Automation</span>
           <span class="tech-tag">Web API (REST/SOAP)</span>
@@ -825,7 +875,7 @@
       </div>
 
       <div class="tech-section">
-        <h4>Gestión de Proyectos</h4>
+        <h4 data-i18n="tech.project_mgmt">Gestión de Proyectos</h4>
         <div class="tech-tags">
           <span class="tech-tag">Azure DevOps</span>
           <span class="tech-tag">Azure Pipelines</span>
@@ -836,78 +886,78 @@
 
     <!-- IDIOMAS -->
     <section>
-      <h2>Idiomas</h2>
+      <h2 data-i18n="section.languages">Idiomas</h2>
       <ul class="lang-list">
-        <li>Español <span class="lang-level">Nativo</span></li>
-        <li>Inglés <span class="lang-level">B2 - Intermedio</span></li>
+        <li><span data-i18n="lang.spanish">Español</span> <span class="lang-level" data-i18n="lang.spanish_level">Nativo</span></li>
+        <li><span data-i18n="lang.english">Inglés</span> <span class="lang-level" data-i18n="lang.english_level">B2 - Intermedio</span></li>
       </ul>
     </section>
 
     <!-- EXPERIENCIA + FORMACIÓN -->
     <section id="experiencia">
-      <h2>Experiencia &amp; Formación</h2>
+      <h2 data-i18n="section.experience">Experiencia &amp; Formación</h2>
 
       <div class="tabs">
-        <button class="tab-btn active" data-tab="experiencia">Experiencia Profesional</button>
-        <button class="tab-btn" data-tab="formacion">Formación</button>
+        <button class="tab-btn active" data-tab="experiencia" data-i18n="tabs.experience">Experiencia Profesional</button>
+        <button class="tab-btn" data-tab="formacion" data-i18n="tabs.education">Formación</button>
       </div>
 
       <!-- TAB: EXPERIENCIA -->
       <div class="tab-panel active" id="tab-experiencia">
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-period">2024 - Actualidad</div>
+            <div class="timeline-period" data-i18n="exp.bip.period">2024 - Actualidad</div>
             <div class="timeline-company">BIP X-Tech</div>
-            <div class="timeline-title">XTech Expert</div>
-            <div class="timeline-desc">Arquitectura y consultoría Cloud para clientes de distintos sectores, con foco en Azure y soluciones de integración a medida.</div>
+            <div class="timeline-title" data-i18n="exp.bip.title">XTech Expert</div>
+            <div class="timeline-desc" data-i18n="exp.bip.desc">Arquitectura y consultoría Cloud para clientes de distintos sectores, con foco en Azure y soluciones de integración a medida.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2023 - 2024</div>
+            <div class="timeline-period" data-i18n="exp.sportian.period">2023 - 2024</div>
             <div class="timeline-company">Sportian by Globant &amp; La Liga Tech</div>
-            <div class="timeline-title">Technical Lead</div>
-            <div class="timeline-desc">Technical Lead en proyectos de alta visibilidad para La Liga Tech. Punto de contacto entre negocio y desarrollo, con responsabilidad directa sobre decisiones de arquitectura.<br><strong>*Más información en CV descargable.</strong></div>
+            <div class="timeline-title" data-i18n="exp.sportian.title">Technical Lead</div>
+            <div class="timeline-desc" data-i18n-html="exp.sportian.desc_html">Technical Lead en proyectos de alta visibilidad para La Liga Tech. Punto de contacto entre negocio y desarrollo, con responsabilidad directa sobre decisiones de arquitectura.<br><strong>*Más información en CV descargable.</strong></div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2023</div>
+            <div class="timeline-period" data-i18n="exp.avanade.period">2023</div>
             <div class="timeline-company">Avanade Spain</div>
-            <div class="timeline-title">Consultor Senior</div>
-            <div class="timeline-desc">Consultoría senior en proyectos Microsoft para grandes cuentas. Decisiones de arquitectura, liderazgo técnico y coordinación de equipo bajo demanda.<br><strong>*Más información en CV descargable.</strong></div>
+            <div class="timeline-title" data-i18n="exp.avanade.title">Consultor Senior</div>
+            <div class="timeline-desc" data-i18n-html="exp.avanade.desc_html">Consultoría senior en proyectos Microsoft para grandes cuentas. Decisiones de arquitectura, liderazgo técnico y coordinación de equipo bajo demanda.<br><strong>*Más información en CV descargable.</strong></div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2021 - 2022</div>
+            <div class="timeline-period" data-i18n="exp.kabel.period">2021 - 2022</div>
             <div class="timeline-company">Kabel Sistemas de Información</div>
-            <div class="timeline-title">Consultor Senior de Datos e Integración</div>
-            <div class="timeline-desc">Definición y desarrollo de arquitecturas Cloud para integración, transformación y enriquecimiento de datos. Gestión técnica de proyectos.</div>
+            <div class="timeline-title" data-i18n="exp.kabel.title">Consultor Senior de Datos e Integración</div>
+            <div class="timeline-desc" data-i18n="exp.kabel.desc">Definición y desarrollo de arquitecturas Cloud para integración, transformación y enriquecimiento de datos. Gestión técnica de proyectos.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2020 - 2021</div>
+            <div class="timeline-period" data-i18n="exp.viseo1.period">2020 - 2021</div>
             <div class="timeline-company">Viseo Spain</div>
-            <div class="timeline-title">Senior Teamlead</div>
-            <div class="timeline-desc">Responsabilidades técnicas ampliadas: arquitectura, previsiones de escalabilidad, control de gasto cloud y cuadros de mando.</div>
+            <div class="timeline-title" data-i18n="exp.viseo1.title">Senior Teamlead</div>
+            <div class="timeline-desc" data-i18n="exp.viseo1.desc">Responsabilidades técnicas ampliadas: arquitectura, previsiones de escalabilidad, control de gasto cloud y cuadros de mando.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2019 - 2020</div>
+            <div class="timeline-period" data-i18n="exp.viseo2.period">2019 - 2020</div>
             <div class="timeline-company">Viseo Spain</div>
-            <div class="timeline-title">Teamlead y Consultor</div>
-            <div class="timeline-desc">Primer rol de liderazgo técnico: coordinación del equipo, planificación de sprints y captura directa de requisitos con cliente.</div>
+            <div class="timeline-title" data-i18n="exp.viseo2.title">Teamlead y Consultor</div>
+            <div class="timeline-desc" data-i18n="exp.viseo2.desc">Primer rol de liderazgo técnico: coordinación del equipo, planificación de sprints y captura directa de requisitos con cliente.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2017 - 2019</div>
+            <div class="timeline-period" data-i18n="exp.birchman.period">2017 - 2019</div>
             <div class="timeline-company">The Birchman Group</div>
-            <div class="timeline-title">Consultor Junior</div>
-            <div class="timeline-desc">Análisis y desarrollo de funcionalidades en proyectos para Iberia Express y Bergé-Gefco Logistics. Resolución de bugs y soporte.</div>
+            <div class="timeline-title" data-i18n="exp.birchman.title">Consultor Junior</div>
+            <div class="timeline-desc" data-i18n="exp.birchman.desc">Análisis y desarrollo de funcionalidades en proyectos para Iberia Express y Bergé-Gefco Logistics. Resolución de bugs y soporte.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2015 - 2017</div>
-            <div class="timeline-company">Independiente</div>
-            <div class="timeline-title">Desarrollador Web a Medida</div>
-            <div class="timeline-desc">Desarrollo de páginas web a medida del cliente y asesoramiento para mostrar la mejor versión de su negocio.</div>
+            <div class="timeline-period" data-i18n="exp.independent.period">2015 - 2017</div>
+            <div class="timeline-company" data-i18n="exp.independent.company">Independiente</div>
+            <div class="timeline-title" data-i18n="exp.independent.title">Desarrollador Web a Medida</div>
+            <div class="timeline-desc" data-i18n="exp.independent.desc">Desarrollo de páginas web a medida del cliente y asesoramiento para mostrar la mejor versión de su negocio.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2015 - 2016</div>
+            <div class="timeline-period" data-i18n="exp.efika.period">2015 - 2016</div>
             <div class="timeline-company">Efika Market</div>
-            <div class="timeline-title">Becario Desarrollador</div>
-            <div class="timeline-desc">Desarrollo web: aplicaciones de captación de datos, mantenimiento de sistemas y páginas web corporativas.</div>
+            <div class="timeline-title" data-i18n="exp.efika.title">Becario Desarrollador</div>
+            <div class="timeline-desc" data-i18n="exp.efika.desc">Desarrollo web: aplicaciones de captación de datos, mantenimiento de sistemas y páginas web corporativas.</div>
           </div>
         </div>
       </div>
@@ -916,86 +966,86 @@
       <div class="tab-panel" id="tab-formacion">
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-period">2022</div>
-            <div class="timeline-company">Certificación oficial</div>
-            <div class="timeline-title">Workato Automation PRO I, II y III</div>
+            <div class="timeline-period" data-i18n="edu.workato.period">2022</div>
+            <div class="timeline-company" data-i18n="edu.workato.company">Certificación oficial</div>
+            <div class="timeline-title" data-i18n="edu.workato.title">Workato Automation PRO I, II y III</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2020</div>
+            <div class="timeline-period" data-i18n="edu.master.period">2020</div>
             <div class="timeline-company">IMF Business School</div>
-            <div class="timeline-title">Máster en Gestión y Dirección de Proyectos</div>
+            <div class="timeline-title" data-i18n="edu.master.title">Máster en Gestión y Dirección de Proyectos</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2019</div>
+            <div class="timeline-period" data-i18n="edu.microservices.period">2019</div>
             <div class="timeline-company">devAcademy</div>
-            <div class="timeline-title">Curso de Arquitectura de Microservicios</div>
+            <div class="timeline-title" data-i18n="edu.microservices.title">Curso de Arquitectura de Microservicios</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2018</div>
+            <div class="timeline-period" data-i18n="edu.scrum.period">2018</div>
             <div class="timeline-company">europeanScrum.org</div>
-            <div class="timeline-title">Scrum Master</div>
+            <div class="timeline-title" data-i18n="edu.scrum.title">Scrum Master</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2018</div>
+            <div class="timeline-period" data-i18n="edu.po.period">2018</div>
             <div class="timeline-company">JavierGarzas.es</div>
-            <div class="timeline-title">Product Owner</div>
+            <div class="timeline-title" data-i18n="edu.po.title">Product Owner</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2012 - 2017</div>
+            <div class="timeline-period" data-i18n="edu.degree.period">2012 - 2017</div>
             <div class="timeline-company">Universidad Francisco de Vitoria, Madrid</div>
-            <div class="timeline-title">Grado en Ingeniería Informática</div>
+            <div class="timeline-title" data-i18n="edu.degree.title">Grado en Ingeniería Informática</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2012 - 2016</div>
+            <div class="timeline-period" data-i18n="edu.robotics.period">2012 - 2016</div>
             <div class="timeline-company">Universidad Francisco de Vitoria, Madrid</div>
-            <div class="timeline-title">Título de Experto en Robótica</div>
+            <div class="timeline-title" data-i18n="edu.robotics.title">Título de Experto en Robótica</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2016</div>
+            <div class="timeline-period" data-i18n="edu.forensics.period">2016</div>
             <div class="timeline-company">Universidad Francisco de Vitoria, Madrid</div>
-            <div class="timeline-title">Curso de Informática Forense</div>
+            <div class="timeline-title" data-i18n="edu.forensics.title">Curso de Informática Forense</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-period">2012</div>
+            <div class="timeline-period" data-i18n="edu.android.period">2012</div>
             <div class="timeline-company">Pixelpro.es</div>
-            <div class="timeline-title">Desarrollo de Aplicaciones Android</div>
+            <div class="timeline-title" data-i18n="edu.android.title">Desarrollo de Aplicaciones Android</div>
           </div>
         </div>
 
         <div class="accordion">
           <button class="accordion-btn" aria-expanded="false">
-            Formación No Acreditada
+            <span data-i18n="accordion.unaccredited.title">Formación No Acreditada</span>
             <i class="fas fa-chevron-down chevron"></i>
           </button>
           <div class="accordion-panel" role="region">
             <div class="card-list">
               <div class="card-list-item">
                 <span class="icon"><i class="fas fa-tools"></i></span>
-                Reparación de sistemas informáticos
+                <span data-i18n="accordion.unaccredited.item1">Reparación de sistemas informáticos</span>
               </div>
               <div class="card-list-item">
                 <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
-                Profesor particular en Universidad Francisco de Vitoria, Madrid
+                <span data-i18n="accordion.unaccredited.item2">Profesor particular en Universidad Francisco de Vitoria, Madrid</span>
               </div>
               <div class="card-list-item">
                 <span class="icon"><i class="fab fa-apple"></i></span>
-                Desarrollo de aplicaciones para iOS con Swift 3 (Udemy)
+                <span data-i18n="accordion.unaccredited.item3">Desarrollo de aplicaciones para iOS con Swift 3 (Udemy)</span>
               </div>
               <div class="card-list-item">
                 <span class="icon"><i class="fab fa-angular"></i></span>
-                Desarrollo en Angular 2 y Node.js (Udemy)
+                <span data-i18n="accordion.unaccredited.item4">Desarrollo en Angular 2 y Node.js (Udemy)</span>
               </div>
               <div class="card-list-item">
                 <span class="icon"><i class="fab fa-microsoft"></i></span>
-                Desarrollo ASP.NET MVC completo (Udemy)
+                <span data-i18n="accordion.unaccredited.item5">Desarrollo ASP.NET MVC completo (Udemy)</span>
               </div>
               <div class="card-list-item">
                 <span class="icon"><i class="fas fa-user-secret"></i></span>
-                Hacking ético (Udemy)
+                <span data-i18n="accordion.unaccredited.item6">Hacking ético (Udemy)</span>
               </div>
               <div class="card-list-item">
                 <span class="icon"><i class="fas fa-people-group"></i></span>
-                Animador y organizador de eventos
+                <span data-i18n="accordion.unaccredited.item7">Animador y organizador de eventos</span>
               </div>
             </div>
           </div>
@@ -1003,26 +1053,26 @@
 
         <div class="accordion">
           <button class="accordion-btn" aria-expanded="false">
-            Otros datos
+            <span data-i18n="accordion.other.title">Otros datos</span>
             <i class="fas fa-chevron-down chevron"></i>
           </button>
           <div class="accordion-panel" role="region">
             <div class="card-list">
               <div class="card-list-item">
                 <span class="icon"><i class="fas fa-car"></i></span>
-                Carnet de conducir y vehículo propio
+                <span data-i18n="accordion.other.item1">Carnet de conducir y vehículo propio</span>
               </div>
               <div class="card-list-item">
                 <span class="icon"><i class="fas fa-plane-departure"></i></span>
-                Disponibilidad para viajar
+                <span data-i18n="accordion.other.item2">Disponibilidad para viajar</span>
               </div>
               <div class="card-list-item">
                 <span class="icon"><i class="fas fa-hands-helping"></i></span>
-                Voluntario en la fundación Hontanar de ayuda a la drogadicción (8 meses)
+                <span data-i18n="accordion.other.item3">Voluntario en la fundación Hontanar de ayuda a la drogadicción (8 meses)</span>
               </div>
               <div class="card-list-item">
                 <span class="icon"><i class="fas fa-person-walking"></i></span>
-                Practicante de artes marciales desde los 6 años
+                <span data-i18n="accordion.other.item4">Practicante de artes marciales desde los 6 años</span>
               </div>
             </div>
           </div>
@@ -1031,8 +1081,88 @@
 
     </section>
 
-    <div class="copyrights">© 2025 Antonio Junquera Criado. Todos los derechos reservados.</div>
+    <div class="copyrights" data-i18n="footer.copyright">© 2025 Antonio Junquera Criado. Todos los derechos reservados.</div>
   </main>
+
+  <!-- i18n: translations dictionary MUST load before the engine -->
+  <script src="translations.js"></script>
+  <!-- i18n engine — runs after translations.js defines window.TRANSLATIONS -->
+  <script>
+    (function () {
+      var STORAGE_KEY = 'lang';
+      var DEFAULT_LANG = 'es';
+      var SUPPORTED = ['es', 'en'];
+
+      function applyLocale(lang) {
+        var dict = (window.TRANSLATIONS && window.TRANSLATIONS[lang])
+                || (window.TRANSLATIONS && window.TRANSLATIONS[DEFAULT_LANG])
+                || {};
+
+        // 1. textContent nodes
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          var key = el.getAttribute('data-i18n');
+          if (dict[key] != null) el.textContent = dict[key];
+        });
+
+        // 2. innerHTML nodes (markup-containing values)
+        document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+          var key = el.getAttribute('data-i18n-html');
+          if (dict[key] != null) el.innerHTML = dict[key];
+        });
+
+        // 3. aria-label attributes
+        document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+          var key = el.getAttribute('data-i18n-aria');
+          if (dict[key] != null) el.setAttribute('aria-label', dict[key]);
+        });
+
+        // 4. Meta tags (2 hardcoded)
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && dict['meta.description'] != null) {
+          metaDesc.setAttribute('content', dict['meta.description']);
+        }
+        var ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc && dict['meta.og_description'] != null) {
+          ogDesc.setAttribute('content', dict['meta.og_description']);
+        }
+
+        // 5. <html lang>
+        document.documentElement.lang = lang;
+
+        // 6. Toggle button active state
+        document.querySelectorAll('.lang-btn').forEach(function (btn) {
+          btn.classList.toggle('is-active', btn.dataset.lang === lang);
+          btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
+        });
+      }
+
+      function setLang(lang) {
+        if (SUPPORTED.indexOf(lang) === -1) return;
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (_) { /* private mode */ }
+        applyLocale(lang);
+      }
+
+      function initI18n() {
+        var stored = DEFAULT_LANG;
+        try {
+          var v = localStorage.getItem(STORAGE_KEY);
+          if (v && SUPPORTED.indexOf(v) !== -1) stored = v;
+        } catch (_) { /* private mode */ }
+
+        applyLocale(stored);
+
+        document.querySelectorAll('.lang-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () { setLang(btn.dataset.lang); });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initI18n);
+      } else {
+        initI18n();
+      }
+    })();
+  </script>
 
   <script>
     // Tabs
