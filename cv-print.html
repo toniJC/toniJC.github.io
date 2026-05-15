@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>CV — Antonio Junquera Criado</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+  <style>
+    /* GENERAR PDF: Abrir en Chrome → Cmd+P → Guardar como PDF → activar "Gráficos de fondo" */
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 9pt;
+      color: #1a1a2e;
+      background: #fff;
+      width: 210mm;
+    }
+
+    /* ── HEADER ─────────────────────────────────── */
+    .header {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      background: linear-gradient(140deg, #060f1f 0%, #0b2540 55%, #072e28 100%);
+      padding: 22px 28px 20px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .header-photo img {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      box-shadow: 0 0 0 2.5px #1de9b6, 0 0 0 5px rgba(29,233,182,0.15);
+    }
+
+    .header-info { flex: 1; }
+
+    .header-eyebrow {
+      font-size: 6.5pt;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #1de9b6;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .header-name {
+      font-family: 'Bricolage Grotesque', Arial, sans-serif;
+      font-size: 26pt;
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.92;
+      letter-spacing: -1px;
+    }
+
+    .header-contact {
+      margin-top: 11px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+    }
+
+    .header-contact span {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .header-contact span i {
+      color: #1de9b6;
+      font-size: 7pt;
+    }
+
+    /* ── BODY: 2 COLUMNS ────────────────────────── */
+    .body {
+      display: flex;
+      min-height: calc(297mm - 126px);
+    }
+
+    /* ── SIDEBAR ────────────────────────────────── */
+    .sidebar {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      width: 64mm;
+      min-width: 64mm;
+      background: #f4f8ff;
+      padding: 20px 16px;
+      border-right: 1px solid #e2eaf7;
+    }
+
+    /* ── MAIN ───────────────────────────────────── */
+    .main {
+      flex: 1;
+      padding: 20px 22px;
+    }
+
+    /* ── SECTION TITLES ─────────────────────────── */
+    .section { margin-bottom: 16px; }
+
+    .section-title {
+      font-family: 'Bricolage Grotesque', Arial, sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #2074e7;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1.5px solid #e2eaf7;
+    }
+
+    .sidebar .section-title {
+      font-size: 6.8pt;
+      letter-spacing: 2px;
+    }
+
+    /* ── PERFIL ─────────────────────────────────── */
+    .profile-text {
+      font-size: 8.5pt;
+      line-height: 1.55;
+      color: #333;
+    }
+
+    .profile-quote {
+      margin-top: 11px;
+      padding: 8px 10px;
+      border-left: 2.5px solid #1de9b6;
+      font-style: italic;
+      font-size: 7.8pt;
+      color: #555;
+      line-height: 1.45;
+    }
+
+    /* ── TIMELINE ───────────────────────────────── */
+    .timeline { padding-left: 0; }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 13px 14px;
+      border-left: 2px solid #dce8f8;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .tl-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -4.5px;
+      top: 4px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #1de9b6;
+    }
+
+    .tl-period {
+      font-size: 6.8pt;
+      font-weight: 600;
+      color: #2074e7;
+      letter-spacing: 0.3px;
+    }
+
+    .tl-company {
+      font-size: 7pt;
+      color: #1de9b6;
+      font-weight: 600;
+      margin-top: 1px;
+    }
+
+    .tl-role {
+      font-family: 'Bricolage Grotesque', Arial, sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #111;
+      margin: 2px 0 4px;
+    }
+
+    .tl-desc {
+      font-size: 8pt;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .tl-projects {
+      list-style: none;
+      margin-top: 5px;
+      padding: 0;
+    }
+
+    .tl-projects li {
+      font-size: 7.5pt;
+      color: #444;
+      line-height: 1.45;
+      padding: 3px 0 3px 9px;
+      position: relative;
+    }
+
+    .tl-projects li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: #1de9b6;
+      font-weight: 700;
+    }
+
+    .tl-projects li strong { color: #2074e7; }
+
+    /* ── SIDEBAR: SKILL TAGS ────────────────────── */
+    .skill-group { margin-bottom: 10px; }
+
+    .skill-group-label {
+      font-size: 6.5pt;
+      font-weight: 600;
+      color: #888;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+    .tag {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      background: #e8f0fd;
+      color: #2074e7;
+      border-radius: 3px;
+      font-size: 6.5pt;
+      font-weight: 500;
+      padding: 2px 6px;
+      line-height: 1.4;
+    }
+
+    /* ── SIDEBAR: ITEMS ─────────────────────────── */
+    .sidebar-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar-list li {
+      font-size: 7.8pt;
+      color: #333;
+      padding: 4px 0;
+      border-bottom: 1px solid #e8eef8;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 6px;
+      line-height: 1.4;
+    }
+
+    .sidebar-list li:last-child { border-bottom: none; }
+
+    .lang-level {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-size: 6.5pt;
+      font-weight: 600;
+      color: #2074e7;
+      background: #e8f0fd;
+      border-radius: 3px;
+      padding: 1px 6px;
+      white-space: nowrap;
+    }
+
+    .sidebar-misc {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar-misc li {
+      font-size: 7.5pt;
+      color: #444;
+      padding: 3px 0;
+      padding-left: 9px;
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .sidebar-misc li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: #1de9b6;
+      font-weight: 700;
+    }
+
+    /* ── SIDEBAR: EDUCATION (compact) ───────────── */
+    .edu-item {
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .edu-period {
+      font-size: 6.5pt;
+      color: #2074e7;
+      font-weight: 600;
+    }
+
+    .edu-title {
+      font-size: 7.8pt;
+      font-weight: 600;
+      color: #111;
+      line-height: 1.3;
+      margin: 1px 0;
+    }
+
+    .edu-org {
+      font-size: 7pt;
+      color: #777;
+    }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    .cv-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      background: #f4f8ff;
+      border-top: 1px solid #e2eaf7;
+      padding: 8px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cv-footer-quote {
+      font-style: italic;
+      font-size: 7pt;
+      color: #888;
+    }
+
+    .cv-footer-copy {
+      font-size: 6.8pt;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="header-photo">
+      <img src="images/principal.jpeg" alt="Antonio Junquera Criado">
+    </div>
+    <div class="header-info">
+      <span class="header-eyebrow">Cloud Architect &amp; Technical Lead</span>
+      <div class="header-name">Antonio<br>Junquera Criado</div>
+      <div class="header-contact">
+        <span><i class="fas fa-map-marker-alt"></i> Madrid</span>
+        <span><i class="fas fa-envelope"></i> antoniojunquerac@gmail.com</span>
+        <span><i class="fas fa-phone"></i> +34 637 85 41 66</span>
+        <span><i class="fab fa-linkedin"></i> linkedin.com/in/antonio-junquera-criado-41988910a</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── BODY ── -->
+  <div class="body">
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+
+      <div class="section">
+        <div class="section-title">Tecnologías</div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Lenguajes</div>
+          <div class="tags">
+            <span class="tag">C#</span>
+            <span class="tag">Java</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">C++</span>
+            <span class="tag">Matlab</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Frameworks</div>
+          <div class="tags">
+            <span class="tag">.NET Core</span>
+            <span class="tag">.NET MVC5</span>
+            <span class="tag">Entity Framework</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">Swagger</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Hibernate</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Datos</div>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">CosmosDB</span>
+            <span class="tag">Snowflake</span>
+            <span class="tag">DataLake</span>
+            <span class="tag">Data Factory</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Azure Cloud</div>
+          <div class="tags">
+            <span class="tag">Azure DevOps</span>
+            <span class="tag">Azure Pipelines</span>
+            <span class="tag">Azure Functions</span>
+            <span class="tag">Service Bus</span>
+            <span class="tag">API Management</span>
+            <span class="tag">Logic Apps</span>
+            <span class="tag">EventGrid</span>
+            <span class="tag">IoT Hub</span>
+            <span class="tag">IoT Edge</span>
+            <span class="tag">Digital Twin</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Herramientas</div>
+          <div class="tags">
+            <span class="tag">Workato</span>
+            <span class="tag">REST / SOAP</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Idiomas</div>
+        <ul class="sidebar-list">
+          <li>Español <span class="lang-level">Nativo</span></li>
+          <li>Inglés <span class="lang-level">B2</span></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Formación</div>
+
+        <div class="edu-item">
+          <div class="edu-period">2020</div>
+          <div class="edu-title">Máster en Gestión y Dirección de Proyectos</div>
+          <div class="edu-org">IMF Business School</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-period">2022</div>
+          <div class="edu-title">Workato Automation PRO I, II y III</div>
+          <div class="edu-org">Certificación oficial</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-period">2019</div>
+          <div class="edu-title">Arquitectura de Microservicios</div>
+          <div class="edu-org">devAcademy</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-period">2018</div>
+          <div class="edu-title">Scrum Master · Product Owner</div>
+          <div class="edu-org">europeanScrum.org · JavierGarzas.es</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-period">2012–2017</div>
+          <div class="edu-title">Grado en Ingeniería Informática</div>
+          <div class="edu-org">Universidad Francisco de Vitoria</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-period">2012–2016</div>
+          <div class="edu-title">Experto en Robótica</div>
+          <div class="edu-org">Universidad Francisco de Vitoria</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Otros</div>
+        <ul class="sidebar-misc">
+          <li>Carnet de conducir · vehículo propio</li>
+          <li>Disponibilidad para viajar</li>
+          <li>Voluntario Fundación Hontanar (8 meses)</li>
+          <li>Artes marciales desde los 6 años</li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- ── MAIN ── -->
+    <main class="main">
+
+      <div class="section">
+        <div class="section-title">Perfil</div>
+        <p class="profile-text">
+          Ingeniero informático con más de 10 años de experiencia en desarrollo de software y arquitectura Cloud, con fuerte componente de liderazgo técnico. He trabajado en entornos de alta exigencia — desde aerolíneas hasta tecnología deportiva — coordinando equipos, tomando decisiones de arquitectura y siendo el nexo entre negocio y técnica.
+        </p>
+        <p class="profile-text" style="margin-top:6px">
+          Mi especialización principal gira en torno al ecosistema Microsoft: .NET, Azure e integración de sistemas complejos. Me muevo con igual comodidad diseñando una solución en la pizarra que implementándola en el código. He coordinado equipos de hasta 15 personas en entornos donde el error tiene coste real.
+        </p>
+        <div class="profile-quote">
+          "Hacer la mitad de algo es esencialmente, no hacer nada" — Jeff Sutherland
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Experiencia</div>
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-period">2024 – Actualidad</div>
+            <div class="tl-company">BIP X-Tech</div>
+            <div class="tl-role">XTech Expert</div>
+            <div class="tl-desc">Arquitectura y consultoría Cloud para clientes de distintos sectores, con foco en Azure y soluciones de integración a medida.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">2023 – 2024</div>
+            <div class="tl-company">Sportian by Globant &amp; La Liga Tech</div>
+            <div class="tl-role">Technical Lead</div>
+            <div class="tl-desc">Lideré técnicamente uno de los equipos del producto, dirigiendo la migración de la plataforma legacy al nuevo modelo de microservicios. Optimicé procesos para reducir coste y mejorar eficiencia, y acompañé a los equipos técnico y de negocio en la definición e implementación de cada nuevo evolutivo.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">2023</div>
+            <div class="tl-company">Avanade Spain</div>
+            <div class="tl-role">Consultor Senior</div>
+            <div class="tl-desc">Asumí la gestión técnica del proyecto, el dimensionamiento del equipo según demanda y el diseño arquitectónico de las soluciones.</div>
+            <ul class="tl-projects">
+              <li><strong>SGS</strong> — Arquitectura internacional de integración de datos para facturación electrónica. Stack: Liquid JS, Azure Functions, API Management, SQL, SOAP/REST, SwaggerHub, Azure Bicep + Pipelines.</li>
+              <li><strong>CHC Energía</strong> — Plataforma cloud distribuida para captura, agrupación, cálculo y almacenamiento de medidas energéticas.</li>
+            </ul>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">2021 – 2022</div>
+            <div class="tl-company">Kabel Sistemas de Información</div>
+            <div class="tl-role">Consultor Senior de Datos e Integración</div>
+            <div class="tl-desc">Diseñé y desarrollé arquitecturas cloud de integración, transformación y enriquecimiento de datos. Gestioné técnicamente los proyectos.</div>
+            <ul class="tl-projects">
+              <li><strong>Noatum</strong> — Evolución y soporte de plataforma de integración (BizTalk, Logic Apps, Function Apps).</li>
+              <li><strong>Grupo Iturri</strong> — Integración eCommerce ↔ SAP con Logic Apps y cuentas de integración Azure.</li>
+              <li><strong>Turning Tables</strong> — Arquitectura IoT de captación, canonización y transformación de datos. Cuadros de mando de monitorización.</li>
+              <li><strong>Repsol</strong> — Plataforma de enriquecimiento de datos sobre Azure Data Factory.</li>
+              <li><strong>DKV</strong> — Definición de solución sobre plataforma de hiperfrecuentación.</li>
+              <li><strong>Repsol (IoT)</strong> — Plataforma de control de datos IoT en colaboración con Microsoft.</li>
+            </ul>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">2020 – 2021</div>
+            <div class="tl-company">Viseo Spain</div>
+            <div class="tl-role">Senior Teamlead</div>
+            <div class="tl-desc">Asumí mayor profundidad técnica: soporte en decisiones de arquitectura, previsiones de escalabilidad, control de gasto cloud y cuadros de mando.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">2019 – 2020</div>
+            <div class="tl-company">Viseo Spain</div>
+            <div class="tl-role">Teamlead y Consultor</div>
+            <div class="tl-desc">Coordiné el equipo de desarrollo, planifiqué la entrega de proyectos y evolutivos, y tomé requisitos directamente con el cliente.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">2017 – 2019</div>
+            <div class="tl-company">The Birchman Group</div>
+            <div class="tl-role">Consultor Junior</div>
+            <div class="tl-desc">Análisis y desarrollo de funcionalidades en proyectos para Iberia Express y Bergé-Gefco Logistics. Resolución de bugs y soporte.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">2015 – 2017</div>
+            <div class="tl-company">Independiente</div>
+            <div class="tl-role">Desarrollador Web a Medida</div>
+            <div class="tl-desc">Desarrollo de páginas web a medida y asesoramiento para mostrar la mejor versión del negocio del cliente.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">2015 – 2016</div>
+            <div class="tl-company">Efika Market</div>
+            <div class="tl-role">Becario Desarrollador</div>
+            <div class="tl-desc">Prácticas de programación web: aplicaciones de captación de datos, mantenimiento de sistemas y webs corporativas.</div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="cv-footer">
+    <span class="cv-footer-quote">"Hacer la mitad de algo es esencialmente, no hacer nada" — Jeff Sutherland</span>
+    <span class="cv-footer-copy">© 2025 Antonio Junquera Criado</span>
+  </footer>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</body>
+</html>
