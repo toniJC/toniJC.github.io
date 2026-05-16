@@ -38,7 +38,7 @@ window.TRANSLATIONS = {
     // about
     'about.p1': 'Ingeniero informático con más de 10 años de experiencia en desarrollo de software y arquitectura Cloud, con un fuerte componente de liderazgo técnico. He trabajado en entornos de alta exigencia (desde aerolíneas hasta tecnología deportiva) coordinando equipos, tomando decisiones de arquitectura y siendo el nexo entre negocio y técnica.',
     'about.p2': 'Mi especialización principal gira en torno al ecosistema Microsoft: .NET, Azure y la integración de sistemas complejos. Me muevo con igual comodidad en la pizarra diseñando una solución que en el código implementándola.',
-    'about.p3': 'He coordinado equipos de hasta 15 personas en entornos donde el error tiene coste real. Para mí, la arquitectura no es un documento: es una decisión que alguien tiene que defender en producción.',
+    'about.p3': 'He coordinado equipos de hasta 15 personas en entornos donde el error tiene coste real. Para mí, la arquitectura no es un documento: es una decisión que alguien tiene que defender en producción. En los últimos años he volcado ese mismo criterio en el campo que más me apasiona: la inteligencia artificial agentica.',
     'about.quote': '"Hacer la mitad de algo es esencialmente, no hacer nada" · Jeff Sutherland',
 
     // ai passion section
@@ -201,7 +201,7 @@ window.TRANSLATIONS = {
     // about
     'about.p1': 'Software engineer with over 10 years of experience in software development and Cloud architecture, with a strong technical leadership component. I have worked in high-demand environments (from airlines to sports technology) coordinating teams, making architecture decisions, and acting as the bridge between business and engineering.',
     'about.p2': 'My main specialisation revolves around the Microsoft ecosystem: .NET, Azure, and complex systems integration. I am equally comfortable at the whiteboard designing a solution as I am in the code implementing it.',
-    'about.p3': 'I have coordinated teams of up to 15 people in environments where mistakes have real costs. For me, architecture is not a document: it is a decision someone has to defend in production.',
+    'about.p3': 'I have coordinated teams of up to 15 people in environments where mistakes have real costs. For me, architecture is not a document: it is a decision someone has to defend in production. In recent years I have brought that same standard to the field I am most passionate about: agentic AI.',
     'about.quote': '"Doing half of something is essentially doing nothing" · Jeff Sutherland',
 
     // ai passion section
