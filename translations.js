@@ -18,6 +18,7 @@ window.TRANSLATIONS = {
 
     // nav
     'nav.about': 'Sobre mí',
+    'nav.ai': 'IA',
     'nav.experience': 'Experiencia',
 
     // header
@@ -39,6 +40,18 @@ window.TRANSLATIONS = {
     'about.p2': 'Mi especialización principal gira en torno al ecosistema Microsoft: .NET, Azure y la integración de sistemas complejos. Me muevo con igual comodidad en la pizarra diseñando una solución que en el código implementándola.',
     'about.p3': 'He coordinado equipos de hasta 15 personas en entornos donde el error tiene coste real. Para mí, la arquitectura no es un documento: es una decisión que alguien tiene que defender en producción.',
     'about.quote': '"Hacer la mitad de algo es esencialmente, no hacer nada" · Jeff Sutherland',
+
+    // ai passion section
+    'ai.title': 'IA: ingeniería antes que tendencia',
+    'ai.intro': 'Mi relación con la inteligencia artificial no empezó con ChatGPT. Empezó en 2015, en la universidad, por curiosidad técnica pura. Y la forma en que la abordo hoy es la misma que aplico a cualquier sistema complejo: con arquitectura, con criterio y con la convicción de que el humano siempre dirige.',
+    'ai.card1.title': 'Criterio antes que herramienta',
+    'ai.card1.desc': 'La IA no resuelve problemas de diseño mal pensados. Saber cuándo aplicarla, cuándo no, y qué parte del sistema no puede ser probabilística es parte del trabajo de arquitectura.',
+    'ai.card2.title': 'Arquitectura sobre prompts',
+    'ai.card2.desc': 'La diferencia entre un proyecto de IA que escala y uno que se desarma está en la arquitectura: contratos claros, capas bien definidas y decisiones explícitas, no en el prompt perfecto.',
+    'ai.card3.title': 'IA agentica como campo de juego',
+    'ai.card3.desc': 'Hoy diseño workflows con agentes, orquesto modelos y construyo sistemas donde la IA ejecuta tareas con autonomía acotada. Es ingeniería de sistemas distribuidos, con un componente nuevo: razonamiento probabilístico.',
+    'ai.card4.title': 'El humano dirige, la IA ejecuta',
+    'ai.card4.desc': 'La IA es una herramienta poderosa, no un reemplazo. El criterio, la dirección y la responsabilidad siguen siendo humanos. Eso no es una limitación: es lo que hace que el sistema funcione.',
 
     // capabilities
     'cap.cloud.title': 'Arquitectura Cloud',
@@ -168,6 +181,7 @@ window.TRANSLATIONS = {
 
     // nav
     'nav.about': 'About',
+    'nav.ai': 'AI',
     'nav.experience': 'Experience',
 
     // header
@@ -189,6 +203,18 @@ window.TRANSLATIONS = {
     'about.p2': 'My main specialisation revolves around the Microsoft ecosystem: .NET, Azure, and complex systems integration. I am equally comfortable at the whiteboard designing a solution as I am in the code implementing it.',
     'about.p3': 'I have coordinated teams of up to 15 people in environments where mistakes have real costs. For me, architecture is not a document: it is a decision someone has to defend in production.',
     'about.quote': '"Doing half of something is essentially doing nothing" · Jeff Sutherland',
+
+    // ai passion section
+    'ai.title': "AI: engineering before the trend",
+    'ai.intro': "My relationship with artificial intelligence didn't start with ChatGPT. It started in 2015, at university, out of pure technical curiosity. And the way I approach it today is the same I apply to any complex system: with architecture, with judgment, and with the conviction that the human always leads.",
+    'ai.card1.title': 'Judgment before tooling',
+    'ai.card1.desc': "AI doesn't fix poorly designed systems. Knowing when to apply it, when not to, and which parts of a system can't be probabilistic is part of the architecture work.",
+    'ai.card2.title': 'Architecture over prompts',
+    'ai.card2.desc': 'The difference between an AI project that scales and one that falls apart lies in its architecture: clear contracts, well-defined layers and explicit decisions, not in the perfect prompt.',
+    'ai.card3.title': 'Agentic AI as the playing field',
+    'ai.card3.desc': "Today I design agent workflows, orchestrate models and build systems where AI executes tasks with bounded autonomy. It's distributed-systems engineering with a new ingredient: probabilistic reasoning.",
+    'ai.card4.title': 'The human directs, AI executes',
+    'ai.card4.desc': "AI is a powerful tool, not a replacement. Judgment, direction and accountability remain human. That's not a limitation: it's what makes the whole system work.",
 
     // capabilities
     'cap.cloud.title': 'Cloud Architecture',
