@@ -7,9 +7,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
   overflow-x: hidden;
 }
 
@@ -17,16 +14,6 @@ body {
 section[id],
 header[id] {
   scroll-margin-top: 88px;
-}
-
-/* ── Hero background ────────────────────────────────────────── */
-
-.hero-bg {
-  background-image: url('https://placehold.co/1920x1080/1a1a1a/ffffff?text=+');
-  /* TODO: reemplazar con imagen real de obra/construcción */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 /* ── Navbar ─────────────────────────────────────────────────── */
@@ -80,17 +67,6 @@ header[id] {
 }
 
 /* Dark — bg oscuro, texto blanco */
-.btn-dark {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  border-color: #1a1a1a;
-}
-
-.btn-dark:hover {
-  background-color: #8B1A1A;
-  border-color: #8B1A1A;
-}
-
 /* Outline blanco — para uso sobre fondos oscuros (hero) */
 .btn-outline-white {
   background-color: transparent;
@@ -104,23 +80,9 @@ header[id] {
 }
 
 /* Outline oscuro — para uso sobre fondos claros */
-.btn-outline-dark {
-  background-color: transparent;
-  color: #1a1a1a;
-  border-color: #1a1a1a;
-}
-
-.btn-outline-dark:hover {
-  background-color: #8B1A1A;
-  color: #ffffff;
-  border-color: #8B1A1A;
-}
-
 /* Active press feedback */
 .btn-primary:active,
-.btn-dark:active,
-.btn-outline-white:active,
-.btn-outline-dark:active {
+.btn-outline-white:active {
   transform: scale(0.97);
 }
 
@@ -135,26 +97,6 @@ header[id] {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.hero-animate {
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-.hero-animate-delay-1 {
-  animation: fadeInUp 0.8s ease-out 0.15s forwards;
-  opacity: 0;
-}
-
-.hero-animate-delay-2 {
-  animation: fadeInUp 0.8s ease-out 0.3s forwards;
-  opacity: 0;
-}
-
-.hero-animate-delay-3 {
-  animation: fadeInUp 0.8s ease-out 0.45s forwards;
-  opacity: 0;
 }
 
 /* ── Service Cards ──────────────────────────────────────────── */
@@ -229,70 +171,15 @@ header[id] {
 
 /* ── Formulario ─────────────────────────────────────────────── */
 
-.form-input {
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-input:focus {
-  border-color: #8B1A1A;
-  box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.1);
-}
-
-.input-error {
-  border-color: #f87171 !important;
-  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.1) !important;
-}
-
-/* Feedback de formulario */
-#form-feedback {
-  border-radius: 8px;
-  padding: 12px 16px;
-}
-
-#form-feedback.success {
-  background-color: #f0fdf4;
-  color: #15803d;
-  border: 1px solid #bbf7d0;
-}
-
-#form-feedback.error {
-  background-color: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
-}
-
 /* ── Certificaciones ────────────────────────────────────────── */
 
-.cert-badge {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cert-badge:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
-}
-
 /* ── Pilares Nosotros ───────────────────────────────────────── */
-
-.pilar-item {
-  transition: transform 0.3s ease;
-}
-
-.pilar-item:hover {
-  transform: translateY(-4px);
-}
 
 /* ── Logo ───────────────────────────────────────────────────── */
 
 /* Removes dark background on dark surfaces (navbar) */
 .logo-blend {
   mix-blend-mode: screen;
-}
-
-.logo-footer {
-  /* Logo on white footer — keep in small dark container */
-  height: 2rem;
-  width: auto;
 }
 
 /* ── Back to Top ────────────────────────────────────────────── */
@@ -377,15 +264,6 @@ header[id] {
   background: rgba(255,255,255,0.12);
   color: #ffffff;
   border-color: rgba(255,255,255,0.2);
-}
-
-/* ── Bento grid cells */
-.bento-cell {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.bento-cell:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 /* ── Masonry project grid ───────────────────────────────────── */

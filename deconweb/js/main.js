@@ -6,15 +6,6 @@
 
 'use strict';
 
-// Forzar scroll al top en cada carga — se ejecuta después del hash scroll del browser
-if (history.scrollRestoration) {
-  history.scrollRestoration = 'manual';
-}
-window.addEventListener('load', function () {
-  history.replaceState(null, '', window.location.pathname);
-  window.scrollTo(0, 0);
-});
-
 /* ──────────────────────────────────────────────────────────────
    1. initNavbar
    Añade clase `scrolled` al navbar cuando scrollY > 80px.
@@ -135,102 +126,6 @@ function initProjectFilter() {
       });
     });
   });
-}
-
-/* ──────────────────────────────────────────────────────────────
-   4. initContactForm
-   Validación client-side + submit via fetch a Formspree.
-   Muestra mensaje de éxito o error en #form-feedback.
-────────────────────────────────────────────────────────────── */
-function initContactForm() {
-  const form     = document.getElementById('contact-form');
-  const feedback = document.getElementById('form-feedback');
-  if (!form || !feedback) return;
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Limpiar errores previos
-    form.querySelectorAll('input, textarea').forEach(function (input) {
-      input.classList.remove('input-error');
-    });
-    hideFeedback();
-
-    // Validación de campos requeridos
-    const nombre  = form.querySelector('[name="nombre"]');
-    const email   = form.querySelector('[name="email"]');
-    const mensaje = form.querySelector('[name="mensaje"]');
-    let valid = true;
-
-    if (!nombre || nombre.value.trim() === '') {
-      if (nombre) nombre.classList.add('input-error');
-      valid = false;
-    }
-
-    if (!email || !emailRegex.test(email.value.trim())) {
-      if (email) email.classList.add('input-error');
-      valid = false;
-    }
-
-    if (!mensaje || mensaje.value.trim() === '') {
-      if (mensaje) mensaje.classList.add('input-error');
-      valid = false;
-    }
-
-    if (!valid) {
-      showFeedback('Por favor, completá todos los campos requeridos correctamente.', false);
-      return;
-    }
-
-    // Enviar a Formspree
-    const submitBtn = form.querySelector('[type="submit"]');
-    if (submitBtn) {
-      submitBtn.disabled    = true;
-      submitBtn.textContent = 'Enviando…';
-    }
-
-    fetch(form.action, {
-      method:  'POST',
-      body:    new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-      .then(function (response) {
-        if (response.ok) {
-          showFeedback('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.', true);
-          form.reset();
-        } else {
-          return response.json().then(function (data) {
-            const msg = (data && data.errors)
-              ? data.errors.map(function (err) { return err.message; }).join(', ')
-              : 'Hubo un error al enviar. Por favor, intentá más tarde.';
-            showFeedback(msg, false);
-          });
-        }
-      })
-      .catch(function () {
-        showFeedback('Error de conexión. Por favor, intentá más tarde.', false);
-      })
-      .finally(function () {
-        if (submitBtn) {
-          submitBtn.disabled    = false;
-          submitBtn.textContent = 'Enviar Mensaje';
-        }
-      });
-  });
-
-  function showFeedback(message, success) {
-    feedback.textContent = message;
-    feedback.classList.remove('hidden', 'success', 'error');
-    feedback.classList.add(success ? 'success' : 'error');
-  }
-
-  function hideFeedback() {
-    feedback.classList.add('hidden');
-    feedback.textContent = '';
-    feedback.classList.remove('success', 'error');
-  }
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -361,7 +256,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initNavbar();
   initMobileMenu();
   initProjectFilter();
-  initContactForm();
   initBackToTop();
   initScrollReveal();
   initCounters();
