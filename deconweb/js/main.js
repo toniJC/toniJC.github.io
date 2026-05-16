@@ -6,15 +6,6 @@
 
 'use strict';
 
-// Forzar scroll al top en cada carga — se ejecuta después del hash scroll del browser
-if (history.scrollRestoration) {
-  history.scrollRestoration = 'manual';
-}
-window.addEventListener('load', function () {
-  history.replaceState(null, '', window.location.pathname);
-  window.scrollTo(0, 0);
-});
-
 /* ──────────────────────────────────────────────────────────────
    1. initNavbar
    Añade clase `scrolled` al navbar cuando scrollY > 80px.
